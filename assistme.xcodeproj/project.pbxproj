@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */; };
-		DCFA1CBE1CA9002B0053FDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CBD1CA9002B0053FDCC /* ViewController.swift */; };
 		DCFA1CC11CA9002B0053FDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */; };
 		DCFA1CC31CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */; };
 		DCFA1CC61CA9002B0053FDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CC41CA9002B0053FDCC /* LaunchScreen.storyboard */; };
@@ -22,6 +21,9 @@
 		DCFA1CE71CA9002B0053FDCC /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE61CA9002B0053FDCC /* GlanceController.swift */; };
 		DCFA1CE91CA9002B0053FDCC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */; };
 		DCFA1CEB1CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */; };
+		DCFA1CFE1CA901C40053FDCC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CFD1CA901C40053FDCC /* API.swift */; };
+		DCFA1D021CA9022D0053FDCC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1D011CA9022D0053FDCC /* ChatViewController.swift */; };
+		DCFA1D041CA903530053FDCC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1D031CA903530053FDCC /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +71,6 @@
 /* Begin PBXFileReference section */
 		DCFA1CB81CA9002B0053FDCC /* assistme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assistme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCFA1CBD1CA9002B0053FDCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DCFA1CC01CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCFA1CC51CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +88,9 @@
 		DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCFA1CEC1CA9002B0053FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFA1CFD1CA901C40053FDCC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DCFA1D011CA9022D0053FDCC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		DCFA1D031CA903530053FDCC /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		DCFA1CAF1CA9002B0053FDCC = {
 			isa = PBXGroup;
 			children = (
+				DCFA1CFC1CA901A30053FDCC /* Shared */,
 				DCFA1CBA1CA9002B0053FDCC /* assistme */,
 				DCFA1CCE1CA9002B0053FDCC /* assistme WatchKit App */,
 				DCFA1CDD1CA9002B0053FDCC /* assistme WatchKit Extension */,
@@ -131,11 +136,12 @@
 			isa = PBXGroup;
 			children = (
 				DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */,
-				DCFA1CBD1CA9002B0053FDCC /* ViewController.swift */,
 				DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */,
 				DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */,
 				DCFA1CC41CA9002B0053FDCC /* LaunchScreen.storyboard */,
 				DCFA1CC71CA9002B0053FDCC /* Info.plist */,
+				DCFA1D011CA9022D0053FDCC /* ChatViewController.swift */,
+				DCFA1D031CA903530053FDCC /* TableViewController.swift */,
 			);
 			path = assistme;
 			sourceTree = "<group>";
@@ -171,6 +177,15 @@
 				DCFA1CDF1CA9002B0053FDCC /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCFA1CFC1CA901A30053FDCC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CFD1CA901C40053FDCC /* API.swift */,
+			);
+			name = Shared;
+			path = assistme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,8 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCFA1CBE1CA9002B0053FDCC /* ViewController.swift in Sources */,
+				DCFA1CFE1CA901C40053FDCC /* API.swift in Sources */,
+				DCFA1D021CA9022D0053FDCC /* ChatViewController.swift in Sources */,
 				DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */,
+				DCFA1D041CA903530053FDCC /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
