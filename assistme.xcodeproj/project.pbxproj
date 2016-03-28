@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */; };
+		DCFA1CBE1CA9002B0053FDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CBD1CA9002B0053FDCC /* ViewController.swift */; };
+		DCFA1CC11CA9002B0053FDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */; };
+		DCFA1CC31CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */; };
+		DCFA1CC61CA9002B0053FDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CC41CA9002B0053FDCC /* LaunchScreen.storyboard */; };
+		DCFA1CCB1CA9002B0053FDCC /* assistme WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DCFA1CCA1CA9002B0053FDCC /* assistme WatchKit App.app */; };
+		DCFA1CD11CA9002B0053FDCC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CCF1CA9002B0053FDCC /* Interface.storyboard */; };
+		DCFA1CD31CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CD21CA9002B0053FDCC /* Assets.xcassets */; };
+		DCFA1CDA1CA9002B0053FDCC /* assistme WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DCFA1CD91CA9002B0053FDCC /* assistme WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DCFA1CE11CA9002B0053FDCC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE01CA9002B0053FDCC /* InterfaceController.swift */; };
+		DCFA1CE31CA9002B0053FDCC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE21CA9002B0053FDCC /* ExtensionDelegate.swift */; };
+		DCFA1CE51CA9002B0053FDCC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE41CA9002B0053FDCC /* NotificationController.swift */; };
+		DCFA1CE71CA9002B0053FDCC /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE61CA9002B0053FDCC /* GlanceController.swift */; };
+		DCFA1CE91CA9002B0053FDCC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */; };
+		DCFA1CEB1CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCFA1CCC1CA9002B0053FDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCFA1CB01CA9002B0053FDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCFA1CC91CA9002B0053FDCC;
+			remoteInfo = "assistme WatchKit App";
+		};
+		DCFA1CDB1CA9002B0053FDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCFA1CB01CA9002B0053FDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCFA1CD81CA9002B0053FDCC;
+			remoteInfo = "assistme WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DCFA1CF21CA9002B0053FDCC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DCFA1CDA1CA9002B0053FDCC /* assistme WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CF61CA9002B0053FDCC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DCFA1CCB1CA9002B0053FDCC /* assistme WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DCFA1CB81CA9002B0053FDCC /* assistme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assistme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCFA1CBD1CA9002B0053FDCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCFA1CC01CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCFA1CC51CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCFA1CC71CA9002B0053FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFA1CCA1CA9002B0053FDCC /* assistme WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "assistme WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCFA1CD01CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		DCFA1CD21CA9002B0053FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCFA1CD41CA9002B0053FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFA1CD91CA9002B0053FDCC /* assistme WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "assistme WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCFA1CDF1CA9002B0053FDCC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		DCFA1CE01CA9002B0053FDCC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		DCFA1CE21CA9002B0053FDCC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		DCFA1CE41CA9002B0053FDCC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		DCFA1CE61CA9002B0053FDCC /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCFA1CEC1CA9002B0053FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCFA1CB51CA9002B0053FDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CD61CA9002B0053FDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCFA1CAF1CA9002B0053FDCC = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CBA1CA9002B0053FDCC /* assistme */,
+				DCFA1CCE1CA9002B0053FDCC /* assistme WatchKit App */,
+				DCFA1CDD1CA9002B0053FDCC /* assistme WatchKit Extension */,
+				DCFA1CB91CA9002B0053FDCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCFA1CB91CA9002B0053FDCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CB81CA9002B0053FDCC /* assistme.app */,
+				DCFA1CCA1CA9002B0053FDCC /* assistme WatchKit App.app */,
+				DCFA1CD91CA9002B0053FDCC /* assistme WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCFA1CBA1CA9002B0053FDCC /* assistme */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */,
+				DCFA1CBD1CA9002B0053FDCC /* ViewController.swift */,
+				DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */,
+				DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */,
+				DCFA1CC41CA9002B0053FDCC /* LaunchScreen.storyboard */,
+				DCFA1CC71CA9002B0053FDCC /* Info.plist */,
+			);
+			path = assistme;
+			sourceTree = "<group>";
+		};
+		DCFA1CCE1CA9002B0053FDCC /* assistme WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CCF1CA9002B0053FDCC /* Interface.storyboard */,
+				DCFA1CD21CA9002B0053FDCC /* Assets.xcassets */,
+				DCFA1CD41CA9002B0053FDCC /* Info.plist */,
+			);
+			path = "assistme WatchKit App";
+			sourceTree = "<group>";
+		};
+		DCFA1CDD1CA9002B0053FDCC /* assistme WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CE01CA9002B0053FDCC /* InterfaceController.swift */,
+				DCFA1CE21CA9002B0053FDCC /* ExtensionDelegate.swift */,
+				DCFA1CE41CA9002B0053FDCC /* NotificationController.swift */,
+				DCFA1CE61CA9002B0053FDCC /* GlanceController.swift */,
+				DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */,
+				DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */,
+				DCFA1CEC1CA9002B0053FDCC /* Info.plist */,
+				DCFA1CDE1CA9002B0053FDCC /* Supporting Files */,
+			);
+			path = "assistme WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		DCFA1CDE1CA9002B0053FDCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CDF1CA9002B0053FDCC /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCFA1CB71CA9002B0053FDCC /* assistme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCFA1CF71CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme" */;
+			buildPhases = (
+				DCFA1CB41CA9002B0053FDCC /* Sources */,
+				DCFA1CB51CA9002B0053FDCC /* Frameworks */,
+				DCFA1CB61CA9002B0053FDCC /* Resources */,
+				DCFA1CF61CA9002B0053FDCC /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCFA1CCD1CA9002B0053FDCC /* PBXTargetDependency */,
+			);
+			name = assistme;
+			productName = assistme;
+			productReference = DCFA1CB81CA9002B0053FDCC /* assistme.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCFA1CC91CA9002B0053FDCC /* assistme WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCFA1CF31CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme WatchKit App" */;
+			buildPhases = (
+				DCFA1CC81CA9002B0053FDCC /* Resources */,
+				DCFA1CF21CA9002B0053FDCC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCFA1CDC1CA9002B0053FDCC /* PBXTargetDependency */,
+			);
+			name = "assistme WatchKit App";
+			productName = "assistme WatchKit App";
+			productReference = DCFA1CCA1CA9002B0053FDCC /* assistme WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		DCFA1CD81CA9002B0053FDCC /* assistme WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCFA1CEF1CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme WatchKit Extension" */;
+			buildPhases = (
+				DCFA1CD51CA9002B0053FDCC /* Sources */,
+				DCFA1CD61CA9002B0053FDCC /* Frameworks */,
+				DCFA1CD71CA9002B0053FDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "assistme WatchKit Extension";
+			productName = "assistme WatchKit Extension";
+			productReference = DCFA1CD91CA9002B0053FDCC /* assistme WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCFA1CB01CA9002B0053FDCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Claudius Mbemba";
+				TargetAttributes = {
+					DCFA1CB71CA9002B0053FDCC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					DCFA1CC91CA9002B0053FDCC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					DCFA1CD81CA9002B0053FDCC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = DCFA1CB31CA9002B0053FDCC /* Build configuration list for PBXProject "assistme" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCFA1CAF1CA9002B0053FDCC;
+			productRefGroup = DCFA1CB91CA9002B0053FDCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCFA1CB71CA9002B0053FDCC /* assistme */,
+				DCFA1CC91CA9002B0053FDCC /* assistme WatchKit App */,
+				DCFA1CD81CA9002B0053FDCC /* assistme WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCFA1CB61CA9002B0053FDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CC61CA9002B0053FDCC /* LaunchScreen.storyboard in Resources */,
+				DCFA1CC31CA9002B0053FDCC /* Assets.xcassets in Resources */,
+				DCFA1CC11CA9002B0053FDCC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CC81CA9002B0053FDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CD31CA9002B0053FDCC /* Assets.xcassets in Resources */,
+				DCFA1CD11CA9002B0053FDCC /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CD71CA9002B0053FDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CEB1CA9002B0053FDCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCFA1CB41CA9002B0053FDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CBE1CA9002B0053FDCC /* ViewController.swift in Sources */,
+				DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CD51CA9002B0053FDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CE51CA9002B0053FDCC /* NotificationController.swift in Sources */,
+				DCFA1CE31CA9002B0053FDCC /* ExtensionDelegate.swift in Sources */,
+				DCFA1CE91CA9002B0053FDCC /* ComplicationController.swift in Sources */,
+				DCFA1CE11CA9002B0053FDCC /* InterfaceController.swift in Sources */,
+				DCFA1CE71CA9002B0053FDCC /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCFA1CCD1CA9002B0053FDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCFA1CC91CA9002B0053FDCC /* assistme WatchKit App */;
+			targetProxy = DCFA1CCC1CA9002B0053FDCC /* PBXContainerItemProxy */;
+		};
+		DCFA1CDC1CA9002B0053FDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCFA1CD81CA9002B0053FDCC /* assistme WatchKit Extension */;
+			targetProxy = DCFA1CDB1CA9002B0053FDCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCFA1CC01CA9002B0053FDCC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCFA1CC41CA9002B0053FDCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCFA1CC51CA9002B0053FDCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DCFA1CCF1CA9002B0053FDCC /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCFA1CD01CA9002B0053FDCC /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCFA1CED1CA9002B0053FDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCFA1CEE1CA9002B0053FDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCFA1CF01CA9002B0053FDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "assistme WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		DCFA1CF11CA9002B0053FDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "assistme WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		DCFA1CF41CA9002B0053FDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = assistme_WatchKit_Extension;
+				INFOPLIST_FILE = "assistme WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		DCFA1CF51CA9002B0053FDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = assistme_WatchKit_Extension;
+				INFOPLIST_FILE = "assistme WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		DCFA1CF81CA9002B0053FDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = assistme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DCFA1CF91CA9002B0053FDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = assistme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCFA1CB31CA9002B0053FDCC /* Build configuration list for PBXProject "assistme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFA1CED1CA9002B0053FDCC /* Debug */,
+				DCFA1CEE1CA9002B0053FDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCFA1CEF1CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFA1CF01CA9002B0053FDCC /* Debug */,
+				DCFA1CF11CA9002B0053FDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCFA1CF31CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFA1CF41CA9002B0053FDCC /* Debug */,
+				DCFA1CF51CA9002B0053FDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCFA1CF71CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFA1CF81CA9002B0053FDCC /* Debug */,
+				DCFA1CF91CA9002B0053FDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCFA1CB01CA9002B0053FDCC /* Project object */;
+}
