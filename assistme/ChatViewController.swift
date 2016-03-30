@@ -10,48 +10,22 @@ import UIKit
 
 class ChatViewController: UIViewController {
   
-  @IBOutlet weak var greetLabel: UILabel!
-  @IBOutlet weak var contentLabel: UILabel!
+  @IBOutlet weak var chatView: UITextView!
+  @IBOutlet weak var chatInput: UITextField!
   
-  @IBAction func fetchData(sender: AnyObject) {
-    
-    // Setup the session to make REST GET call.  Notice the URL is https NOT http!!
-    let postEndpoint: String = "https://httpbin.org/ip"
-    let session = NSURLSession.sharedSession()
-    let url = NSURL(string: postEndpoint)!
-    
-    // Make the POST call and handle it in a completion handler
-    session.dataTaskWithURL(url, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-      // Make sure we get an OK response
-      guard let realResponse = response as? NSHTTPURLResponse where
-        realResponse.statusCode == 200 else {
-          print("Not a 200 response")
-          return
-      }
-      
-      // Read the JSON
-      do {
-        if let ipString = NSString(data:data!, encoding: NSUTF8StringEncoding) {
-          // Print what we got from the call
-          print(ipString)
-          
-          // Parse the JSON to get the IP
-          let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-          let origin = jsonDictionary["origin"] as! String
-          
-          // Update the label
-          self.performSelectorOnMainThread(#selector(ChatViewController.updateIPLabel(_:)), withObject: origin, waitUntilDone: false)
-        }
-      } catch {
-        print("bad things happened")
-      }
-    }).resume()
-  }
+  let api = API.getSingleton()
+  var currentDialog:[String:String] = [:]
+  var client_id:Int = 0, conversation_id:Int = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    
+    title =  "Pizza Chat Bot"
+    self.chatView.text = ""
+    
+    self.getConvoData()
   }
   
   override func didReceiveMemoryWarning() {
@@ -59,8 +33,48 @@ class ChatViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  func updateIPLabel (text: String) {
-    self.contentLabel.text = "Hello" + text
+  
+  func setupIds(results:[String: AnyObject]) {
+    self.client_id = results["conversation"]!["client_id"] as! Int
+    self.conversation_id = results["conversation"]!["conversation_id"] as! Int
+  }
+  
+  func updateConverationView(responses:NSArray){
+    for resp in responses{
+      if let resp = resp as? String{
+        self.chatInput += "\(resp))\n"
+      }
+    }
+  }
+  
+  
+  func getConvoData(params:String? = nil){
+    //initate convo
+    api.getConversation(params,completionHandler: {data, error -> Void in
+      if (data != nil) {
+        let results = NSDictionary(dictionary: data) as! [String : AnyObject]
+        let responses = results["conversation"]!["response"] as! NSArray
+        
+        self.setupIds(results)
+        
+        self.api.conversations.append(results)
+        self.updateConverationView(responses)
+        
+      } else {
+        print("api.getData failed")
+        print(error)
+      }
+    })
+    
+  }
+  
+  @IBAction func sendChat() {
+    var params = ""
+    if client_id != 0 && conversation_id != 0 {
+      params = "input=\(self.chatInput.text)&client_id=\(self.client_id)&conversation_id=\(self.conversation_id)"
+    }
+    
+    self.getConvoData(params)
   }
   
   
