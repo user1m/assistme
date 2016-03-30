@@ -88,39 +88,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGF-Qx-Cdd">
-                                <rect key="frame" x="469" y="493" width="108" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="lDV-jW-hSP"/>
-                                    <constraint firstAttribute="width" constant="108" id="wOg-5j-9Q4"/>
-                                </constraints>
-                                <state key="normal" title="Send">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendChat" destination="BYZ-38-t0r" eventType="touchUpInside" id="vUN-yy-f6l"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wm-lV-muS">
-                                <rect key="frame" x="23" y="493" width="447" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4wm-lV-muS" secondAttribute="bottom" constant="46" id="JVB-xS-1hS"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tGF-Qx-Cdd" secondAttribute="bottom" constant="46" id="Wjt-RY-nat"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tGF-Qx-Cdd" secondAttribute="trailing" constant="3" id="Zex-sM-mbv"/>
-                            <constraint firstItem="tGF-Qx-Cdd" firstAttribute="leading" secondItem="4wm-lV-muS" secondAttribute="trailing" constant="-1" id="nwW-YA-qyU"/>
-                            <constraint firstItem="4wm-lV-muS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="vvQ-gG-cPO"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DnH-M2-HwN"/>
-                    <connections>
-                        <outlet property="chatInput" destination="4wm-lV-muS" id="2DV-Dq-hIR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

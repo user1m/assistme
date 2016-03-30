@@ -1,1432 +1,681 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>32663598129AC8B294F8053D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>37455B6CE2BC064953218E7A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E52C74B8748D23618D83A66C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>440DCDEB405C0E092B6756A9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-assistme/Pods-assistme-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>52D9114C42FF92C19A5A0836</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-assistme.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-assistme/Pods-assistme.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>599E7A00F0F64CB0C491B3BD</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>52D9114C42FF92C19A5A0836</string>
-				<string>6FF79CF22C7CA1B303AD33B6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6FF79CF22C7CA1B303AD33B6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-assistme.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-assistme/Pods-assistme.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8A9BDCC6169A28E5935780DF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E52C74B8748D23618D83A66C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CAF1CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CFC1CA901A30053FDCC</string>
-				<string>DCFA1CBA1CA9002B0053FDCC</string>
-				<string>DCFA1CCE1CA9002B0053FDCC</string>
-				<string>DCFA1CDD1CA9002B0053FDCC</string>
-				<string>DCFA1CB91CA9002B0053FDCC</string>
-				<string>599E7A00F0F64CB0C491B3BD</string>
-				<string>8A9BDCC6169A28E5935780DF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CB01CA9002B0053FDCC</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Claudius Mbemba</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>DCFA1CB71CA9002B0053FDCC</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>DCFA1CC91CA9002B0053FDCC</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>DCFA1CD81CA9002B0053FDCC</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>DCFA1CB31CA9002B0053FDCC</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>DCFA1CAF1CA9002B0053FDCC</string>
-			<key>productRefGroup</key>
-			<string>DCFA1CB91CA9002B0053FDCC</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>DCFA1CB71CA9002B0053FDCC</string>
-				<string>DCFA1CC91CA9002B0053FDCC</string>
-				<string>DCFA1CD81CA9002B0053FDCC</string>
-			</array>
-		</dict>
-		<key>DCFA1CB31CA9002B0053FDCC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DCFA1CED1CA9002B0053FDCC</string>
-				<string>DCFA1CEE1CA9002B0053FDCC</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>DCFA1CB41CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DCFA1CFE1CA901C40053FDCC</string>
-				<string>DCFA1D021CA9022D0053FDCC</string>
-				<string>DCFD8EA81CAB91690085834E</string>
-				<string>DCFA1CBC1CA9002B0053FDCC</string>
-				<string>DCFA1D041CA903530053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CB51CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>37455B6CE2BC064953218E7A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CB61CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DCFA1CC61CA9002B0053FDCC</string>
-				<string>DCFA1CC31CA9002B0053FDCC</string>
-				<string>DCFA1CC11CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CB71CA9002B0053FDCC</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>DCFA1CF71CA9002B0053FDCC</string>
-			<key>buildPhases</key>
-			<array>
-				<string>32663598129AC8B294F8053D</string>
-				<string>DCFA1CB41CA9002B0053FDCC</string>
-				<string>DCFA1CB51CA9002B0053FDCC</string>
-				<string>DCFA1CB61CA9002B0053FDCC</string>
-				<string>DCFA1CF61CA9002B0053FDCC</string>
-				<string>E5725956F82ACA8C32FF7AC2</string>
-				<string>440DCDEB405C0E092B6756A9</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>DCFA1CCD1CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>assistme</string>
-			<key>productName</key>
-			<string>assistme</string>
-			<key>productReference</key>
-			<string>DCFA1CB81CA9002B0053FDCC</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>DCFA1CB81CA9002B0053FDCC</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>assistme.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DCFA1CB91CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CB81CA9002B0053FDCC</string>
-				<string>DCFA1CCA1CA9002B0053FDCC</string>
-				<string>DCFA1CD91CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CBA1CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CBB1CA9002B0053FDCC</string>
-				<string>DCFA1CBF1CA9002B0053FDCC</string>
-				<string>DCFA1CC21CA9002B0053FDCC</string>
-				<string>DCFA1CC41CA9002B0053FDCC</string>
-				<string>DCFA1CC71CA9002B0053FDCC</string>
-				<string>DCFA1D011CA9022D0053FDCC</string>
-				<string>DCFA1D031CA903530053FDCC</string>
-				<string>DCFD8EA71CAB91690085834E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>assistme</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CBB1CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CBC1CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CBB1CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CBF1CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CC01CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CC01CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CC11CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CBF1CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CC21CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CC31CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CC21CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CC41CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CC51CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CC51CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CC61CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CC41CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CC71CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CC81CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DCFA1CD31CA9002B0053FDCC</string>
-				<string>DCFA1CD11CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CC91CA9002B0053FDCC</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>DCFA1CF31CA9002B0053FDCC</string>
-			<key>buildPhases</key>
-			<array>
-				<string>DCFA1CC81CA9002B0053FDCC</string>
-				<string>DCFA1CF21CA9002B0053FDCC</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>DCFA1CDC1CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>assistme WatchKit App</string>
-			<key>productName</key>
-			<string>assistme WatchKit App</string>
-			<key>productReference</key>
-			<string>DCFA1CCA1CA9002B0053FDCC</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application.watchapp2</string>
-		</dict>
-		<key>DCFA1CCA1CA9002B0053FDCC</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>assistme WatchKit App.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DCFA1CCB1CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CCA1CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CCC1CA9002B0053FDCC</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>DCFA1CB01CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>DCFA1CC91CA9002B0053FDCC</string>
-			<key>remoteInfo</key>
-			<string>assistme WatchKit App</string>
-		</dict>
-		<key>DCFA1CCD1CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>DCFA1CC91CA9002B0053FDCC</string>
-			<key>targetProxy</key>
-			<string>DCFA1CCC1CA9002B0053FDCC</string>
-		</dict>
-		<key>DCFA1CCE1CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CCF1CA9002B0053FDCC</string>
-				<string>DCFA1CD21CA9002B0053FDCC</string>
-				<string>DCFA1CD41CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>assistme WatchKit App</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CCF1CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CD01CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Interface.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CD01CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Interface.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CD11CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CCF1CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CD21CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CD31CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CD21CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CD41CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CD51CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DCFA1CE51CA9002B0053FDCC</string>
-				<string>DCFA1CE31CA9002B0053FDCC</string>
-				<string>DCFA1CE91CA9002B0053FDCC</string>
-				<string>DCFA1CE11CA9002B0053FDCC</string>
-				<string>DCFA1CE71CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CD61CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CD71CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>DCFA1CEB1CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CD81CA9002B0053FDCC</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>DCFA1CEF1CA9002B0053FDCC</string>
-			<key>buildPhases</key>
-			<array>
-				<string>DCFA1CD51CA9002B0053FDCC</string>
-				<string>DCFA1CD61CA9002B0053FDCC</string>
-				<string>DCFA1CD71CA9002B0053FDCC</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>assistme WatchKit Extension</string>
-			<key>productName</key>
-			<string>assistme WatchKit Extension</string>
-			<key>productReference</key>
-			<string>DCFA1CD91CA9002B0053FDCC</string>
-			<key>productType</key>
-			<string>com.apple.product-type.watchkit2-extension</string>
-		</dict>
-		<key>DCFA1CD91CA9002B0053FDCC</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.app-extension</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>assistme WatchKit Extension.appex</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DCFA1CDA1CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CD91CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>RemoveHeadersOnCopy</string>
-				</array>
-			</dict>
-		</dict>
-		<key>DCFA1CDB1CA9002B0053FDCC</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>DCFA1CB01CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>DCFA1CD81CA9002B0053FDCC</string>
-			<key>remoteInfo</key>
-			<string>assistme WatchKit Extension</string>
-		</dict>
-		<key>DCFA1CDC1CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>DCFA1CD81CA9002B0053FDCC</string>
-			<key>targetProxy</key>
-			<string>DCFA1CDB1CA9002B0053FDCC</string>
-		</dict>
-		<key>DCFA1CDD1CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CE01CA9002B0053FDCC</string>
-				<string>DCFA1CE21CA9002B0053FDCC</string>
-				<string>DCFA1CE41CA9002B0053FDCC</string>
-				<string>DCFA1CE61CA9002B0053FDCC</string>
-				<string>DCFA1CE81CA9002B0053FDCC</string>
-				<string>DCFA1CEA1CA9002B0053FDCC</string>
-				<string>DCFA1CEC1CA9002B0053FDCC</string>
-				<string>DCFA1CDE1CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>assistme WatchKit Extension</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CDE1CA9002B0053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CDF1CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CDF1CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>PushNotificationPayload.apns</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CE01CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>InterfaceController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CE11CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CE01CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CE21CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ExtensionDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CE31CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CE21CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CE41CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>NotificationController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CE51CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CE41CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CE61CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GlanceController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CE71CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CE61CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CE81CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ComplicationController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CE91CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CE81CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CEA1CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CEB1CA9002B0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CEA1CA9002B0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1CEC1CA9002B0053FDCC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CED1CA9002B0053FDCC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DCFA1CEE1CA9002B0053FDCC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>DCFA1CEF1CA9002B0053FDCC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DCFA1CF01CA9002B0053FDCC</string>
-				<string>DCFA1CF11CA9002B0053FDCC</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>DCFA1CF01CA9002B0053FDCC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_COMPLICATION_NAME</key>
-				<string>Complication</string>
-				<key>INFOPLIST_FILE</key>
-				<string>assistme WatchKit Extension/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.claudiusmbemba.assistme.watchkitapp.watchkitextension</string>
-				<key>PRODUCT_NAME</key>
-				<string>${TARGET_NAME}</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DCFA1CF11CA9002B0053FDCC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_COMPLICATION_NAME</key>
-				<string>Complication</string>
-				<key>INFOPLIST_FILE</key>
-				<string>assistme WatchKit Extension/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.claudiusmbemba.assistme.watchkitapp.watchkitextension</string>
-				<key>PRODUCT_NAME</key>
-				<string>${TARGET_NAME}</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>DCFA1CF21CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string></string>
-			<key>dstSubfolderSpec</key>
-			<string>13</string>
-			<key>files</key>
-			<array>
-				<string>DCFA1CDA1CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>name</key>
-			<string>Embed App Extensions</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CF31CA9002B0053FDCC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DCFA1CF41CA9002B0053FDCC</string>
-				<string>DCFA1CF51CA9002B0053FDCC</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>DCFA1CF41CA9002B0053FDCC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
-				<string>YES</string>
-				<key>IBSC_MODULE</key>
-				<string>assistme_WatchKit_Extension</string>
-				<key>INFOPLIST_FILE</key>
-				<string>assistme WatchKit App/Info.plist</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.claudiusmbemba.assistme.watchkitapp</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DCFA1CF51CA9002B0053FDCC</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
-				<string>YES</string>
-				<key>IBSC_MODULE</key>
-				<string>assistme_WatchKit_Extension</string>
-				<key>INFOPLIST_FILE</key>
-				<string>assistme WatchKit App/Info.plist</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.claudiusmbemba.assistme.watchkitapp</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>DCFA1CF61CA9002B0053FDCC</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>$(CONTENTS_FOLDER_PATH)/Watch</string>
-			<key>dstSubfolderSpec</key>
-			<string>16</string>
-			<key>files</key>
-			<array>
-				<string>DCFA1CCB1CA9002B0053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>name</key>
-			<string>Embed Watch Content</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DCFA1CF71CA9002B0053FDCC</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>DCFA1CF81CA9002B0053FDCC</string>
-				<string>DCFA1CF91CA9002B0053FDCC</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>DCFA1CF81CA9002B0053FDCC</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>52D9114C42FF92C19A5A0836</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>assistme/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.claudiusmbemba.assistme</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>DCFA1CF91CA9002B0053FDCC</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>6FF79CF22C7CA1B303AD33B6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>assistme/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.claudiusmbemba.assistme</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>DCFA1CFC1CA901A30053FDCC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>DCFA1CFD1CA901C40053FDCC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Shared</string>
-			<key>path</key>
-			<string>assistme</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CFD1CA901C40053FDCC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>API.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1CFE1CA901C40053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1CFD1CA901C40053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1D011CA9022D0053FDCC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ChatViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1D021CA9022D0053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1D011CA9022D0053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFA1D031CA903530053FDCC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>TableViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFA1D041CA903530053FDCC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFA1D031CA903530053FDCC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DCFD8EA71CAB91690085834E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>DialogTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DCFD8EA81CAB91690085834E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DCFD8EA71CAB91690085834E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E52C74B8748D23618D83A66C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_assistme.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>E5725956F82ACA8C32FF7AC2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-assistme/Pods-assistme-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>DCFA1CB01CA9002B0053FDCC</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37455B6CE2BC064953218E7A /* Pods_assistme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52C74B8748D23618D83A66C /* Pods_assistme.framework */; };
+		DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */; };
+		DCFA1CC11CA9002B0053FDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */; };
+		DCFA1CC31CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */; };
+		DCFA1CC61CA9002B0053FDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CC41CA9002B0053FDCC /* LaunchScreen.storyboard */; };
+		DCFA1CCB1CA9002B0053FDCC /* assistme WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DCFA1CCA1CA9002B0053FDCC /* assistme WatchKit App.app */; };
+		DCFA1CD11CA9002B0053FDCC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CCF1CA9002B0053FDCC /* Interface.storyboard */; };
+		DCFA1CD31CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CD21CA9002B0053FDCC /* Assets.xcassets */; };
+		DCFA1CDA1CA9002B0053FDCC /* assistme WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DCFA1CD91CA9002B0053FDCC /* assistme WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DCFA1CE11CA9002B0053FDCC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE01CA9002B0053FDCC /* InterfaceController.swift */; };
+		DCFA1CE31CA9002B0053FDCC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE21CA9002B0053FDCC /* ExtensionDelegate.swift */; };
+		DCFA1CE51CA9002B0053FDCC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE41CA9002B0053FDCC /* NotificationController.swift */; };
+		DCFA1CE71CA9002B0053FDCC /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE61CA9002B0053FDCC /* GlanceController.swift */; };
+		DCFA1CE91CA9002B0053FDCC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */; };
+		DCFA1CEB1CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */; };
+		DCFA1CFE1CA901C40053FDCC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CFD1CA901C40053FDCC /* API.swift */; };
+		DCFA1D021CA9022D0053FDCC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1D011CA9022D0053FDCC /* ChatViewController.swift */; };
+		DCFA1D041CA903530053FDCC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1D031CA903530053FDCC /* TableViewController.swift */; };
+		DCFD8EA81CAB91690085834E /* DialogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD8EA71CAB91690085834E /* DialogTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCFA1CCC1CA9002B0053FDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCFA1CB01CA9002B0053FDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCFA1CC91CA9002B0053FDCC;
+			remoteInfo = "assistme WatchKit App";
+		};
+		DCFA1CDB1CA9002B0053FDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCFA1CB01CA9002B0053FDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCFA1CD81CA9002B0053FDCC;
+			remoteInfo = "assistme WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DCFA1CF21CA9002B0053FDCC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DCFA1CDA1CA9002B0053FDCC /* assistme WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CF61CA9002B0053FDCC /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DCFA1CCB1CA9002B0053FDCC /* assistme WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		52D9114C42FF92C19A5A0836 /* Pods-assistme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assistme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-assistme/Pods-assistme.debug.xcconfig"; sourceTree = "<group>"; };
+		6FF79CF22C7CA1B303AD33B6 /* Pods-assistme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assistme.release.xcconfig"; path = "Pods/Target Support Files/Pods-assistme/Pods-assistme.release.xcconfig"; sourceTree = "<group>"; };
+		DCFA1CB81CA9002B0053FDCC /* assistme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assistme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCFA1CC01CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCFA1CC51CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCFA1CC71CA9002B0053FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFA1CCA1CA9002B0053FDCC /* assistme WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "assistme WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCFA1CD01CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		DCFA1CD21CA9002B0053FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCFA1CD41CA9002B0053FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFA1CD91CA9002B0053FDCC /* assistme WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "assistme WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCFA1CDF1CA9002B0053FDCC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		DCFA1CE01CA9002B0053FDCC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		DCFA1CE21CA9002B0053FDCC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		DCFA1CE41CA9002B0053FDCC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		DCFA1CE61CA9002B0053FDCC /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCFA1CEC1CA9002B0053FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCFA1CFD1CA901C40053FDCC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DCFA1D011CA9022D0053FDCC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		DCFA1D031CA903530053FDCC /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DCFD8EA71CAB91690085834E /* DialogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogTableViewCell.swift; sourceTree = "<group>"; };
+		DCFD8EA91CABCBAD0085834E /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E52C74B8748D23618D83A66C /* Pods_assistme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_assistme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCFA1CB51CA9002B0053FDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37455B6CE2BC064953218E7A /* Pods_assistme.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CD61CA9002B0053FDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		599E7A00F0F64CB0C491B3BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52D9114C42FF92C19A5A0836 /* Pods-assistme.debug.xcconfig */,
+				6FF79CF22C7CA1B303AD33B6 /* Pods-assistme.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A9BDCC6169A28E5935780DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E52C74B8748D23618D83A66C /* Pods_assistme.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCFA1CAF1CA9002B0053FDCC = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CFC1CA901A30053FDCC /* Shared */,
+				DCFA1CBA1CA9002B0053FDCC /* assistme */,
+				DCFA1CCE1CA9002B0053FDCC /* assistme WatchKit App */,
+				DCFA1CDD1CA9002B0053FDCC /* assistme WatchKit Extension */,
+				DCFA1CB91CA9002B0053FDCC /* Products */,
+				599E7A00F0F64CB0C491B3BD /* Pods */,
+				8A9BDCC6169A28E5935780DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DCFA1CB91CA9002B0053FDCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CB81CA9002B0053FDCC /* assistme.app */,
+				DCFA1CCA1CA9002B0053FDCC /* assistme WatchKit App.app */,
+				DCFA1CD91CA9002B0053FDCC /* assistme WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCFA1CBA1CA9002B0053FDCC /* assistme */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */,
+				DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */,
+				DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */,
+				DCFA1CC41CA9002B0053FDCC /* LaunchScreen.storyboard */,
+				DCFA1CC71CA9002B0053FDCC /* Info.plist */,
+				DCFA1D011CA9022D0053FDCC /* ChatViewController.swift */,
+				DCFA1D031CA903530053FDCC /* TableViewController.swift */,
+				DCFD8EA71CAB91690085834E /* DialogTableViewCell.swift */,
+			);
+			path = assistme;
+			sourceTree = "<group>";
+		};
+		DCFA1CCE1CA9002B0053FDCC /* assistme WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CCF1CA9002B0053FDCC /* Interface.storyboard */,
+				DCFA1CD21CA9002B0053FDCC /* Assets.xcassets */,
+				DCFA1CD41CA9002B0053FDCC /* Info.plist */,
+			);
+			path = "assistme WatchKit App";
+			sourceTree = "<group>";
+		};
+		DCFA1CDD1CA9002B0053FDCC /* assistme WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CE01CA9002B0053FDCC /* InterfaceController.swift */,
+				DCFA1CE21CA9002B0053FDCC /* ExtensionDelegate.swift */,
+				DCFA1CE41CA9002B0053FDCC /* NotificationController.swift */,
+				DCFA1CE61CA9002B0053FDCC /* GlanceController.swift */,
+				DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */,
+				DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */,
+				DCFA1CEC1CA9002B0053FDCC /* Info.plist */,
+				DCFA1CDE1CA9002B0053FDCC /* Supporting Files */,
+			);
+			path = "assistme WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		DCFA1CDE1CA9002B0053FDCC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CDF1CA9002B0053FDCC /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCFA1CFC1CA901A30053FDCC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DCFA1CFD1CA901C40053FDCC /* API.swift */,
+				DCFD8EA91CABCBAD0085834E /* Bridging-Header.h */,
+			);
+			name = Shared;
+			path = assistme;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCFA1CB71CA9002B0053FDCC /* assistme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCFA1CF71CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme" */;
+			buildPhases = (
+				32663598129AC8B294F8053D /* Check Pods Manifest.lock */,
+				DCFA1CB41CA9002B0053FDCC /* Sources */,
+				DCFA1CB51CA9002B0053FDCC /* Frameworks */,
+				DCFA1CB61CA9002B0053FDCC /* Resources */,
+				DCFA1CF61CA9002B0053FDCC /* Embed Watch Content */,
+				E5725956F82ACA8C32FF7AC2 /* Embed Pods Frameworks */,
+				440DCDEB405C0E092B6756A9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCFA1CCD1CA9002B0053FDCC /* PBXTargetDependency */,
+			);
+			name = assistme;
+			productName = assistme;
+			productReference = DCFA1CB81CA9002B0053FDCC /* assistme.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCFA1CC91CA9002B0053FDCC /* assistme WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCFA1CF31CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme WatchKit App" */;
+			buildPhases = (
+				DCFA1CC81CA9002B0053FDCC /* Resources */,
+				DCFA1CF21CA9002B0053FDCC /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCFA1CDC1CA9002B0053FDCC /* PBXTargetDependency */,
+			);
+			name = "assistme WatchKit App";
+			productName = "assistme WatchKit App";
+			productReference = DCFA1CCA1CA9002B0053FDCC /* assistme WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		DCFA1CD81CA9002B0053FDCC /* assistme WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCFA1CEF1CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme WatchKit Extension" */;
+			buildPhases = (
+				DCFA1CD51CA9002B0053FDCC /* Sources */,
+				DCFA1CD61CA9002B0053FDCC /* Frameworks */,
+				DCFA1CD71CA9002B0053FDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "assistme WatchKit Extension";
+			productName = "assistme WatchKit Extension";
+			productReference = DCFA1CD91CA9002B0053FDCC /* assistme WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCFA1CB01CA9002B0053FDCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Claudius Mbemba";
+				TargetAttributes = {
+					DCFA1CB71CA9002B0053FDCC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					DCFA1CC91CA9002B0053FDCC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					DCFA1CD81CA9002B0053FDCC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = DCFA1CB31CA9002B0053FDCC /* Build configuration list for PBXProject "assistme" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCFA1CAF1CA9002B0053FDCC;
+			productRefGroup = DCFA1CB91CA9002B0053FDCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCFA1CB71CA9002B0053FDCC /* assistme */,
+				DCFA1CC91CA9002B0053FDCC /* assistme WatchKit App */,
+				DCFA1CD81CA9002B0053FDCC /* assistme WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCFA1CB61CA9002B0053FDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CC61CA9002B0053FDCC /* LaunchScreen.storyboard in Resources */,
+				DCFA1CC31CA9002B0053FDCC /* Assets.xcassets in Resources */,
+				DCFA1CC11CA9002B0053FDCC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CC81CA9002B0053FDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CD31CA9002B0053FDCC /* Assets.xcassets in Resources */,
+				DCFA1CD11CA9002B0053FDCC /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CD71CA9002B0053FDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CEB1CA9002B0053FDCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32663598129AC8B294F8053D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		440DCDEB405C0E092B6756A9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-assistme/Pods-assistme-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5725956F82ACA8C32FF7AC2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-assistme/Pods-assistme-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCFA1CB41CA9002B0053FDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CFE1CA901C40053FDCC /* API.swift in Sources */,
+				DCFA1D021CA9022D0053FDCC /* ChatViewController.swift in Sources */,
+				DCFD8EA81CAB91690085834E /* DialogTableViewCell.swift in Sources */,
+				DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */,
+				DCFA1D041CA903530053FDCC /* TableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCFA1CD51CA9002B0053FDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFA1CE51CA9002B0053FDCC /* NotificationController.swift in Sources */,
+				DCFA1CE31CA9002B0053FDCC /* ExtensionDelegate.swift in Sources */,
+				DCFA1CE91CA9002B0053FDCC /* ComplicationController.swift in Sources */,
+				DCFA1CE11CA9002B0053FDCC /* InterfaceController.swift in Sources */,
+				DCFA1CE71CA9002B0053FDCC /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCFA1CCD1CA9002B0053FDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCFA1CC91CA9002B0053FDCC /* assistme WatchKit App */;
+			targetProxy = DCFA1CCC1CA9002B0053FDCC /* PBXContainerItemProxy */;
+		};
+		DCFA1CDC1CA9002B0053FDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCFA1CD81CA9002B0053FDCC /* assistme WatchKit Extension */;
+			targetProxy = DCFA1CDB1CA9002B0053FDCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCFA1CC01CA9002B0053FDCC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCFA1CC41CA9002B0053FDCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCFA1CC51CA9002B0053FDCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DCFA1CCF1CA9002B0053FDCC /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCFA1CD01CA9002B0053FDCC /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCFA1CED1CA9002B0053FDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCFA1CEE1CA9002B0053FDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCFA1CF01CA9002B0053FDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "assistme WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		DCFA1CF11CA9002B0053FDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "assistme WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		DCFA1CF41CA9002B0053FDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = assistme_WatchKit_Extension;
+				INFOPLIST_FILE = "assistme WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		DCFA1CF51CA9002B0053FDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = assistme_WatchKit_Extension;
+				INFOPLIST_FILE = "assistme WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		DCFA1CF81CA9002B0053FDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52D9114C42FF92C19A5A0836 /* Pods-assistme.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = assistme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./assistme/Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = Pods;
+			};
+			name = Debug;
+		};
+		DCFA1CF91CA9002B0053FDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF79CF22C7CA1B303AD33B6 /* Pods-assistme.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = assistme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./assistme/Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = Pods;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCFA1CB31CA9002B0053FDCC /* Build configuration list for PBXProject "assistme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFA1CED1CA9002B0053FDCC /* Debug */,
+				DCFA1CEE1CA9002B0053FDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCFA1CEF1CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFA1CF01CA9002B0053FDCC /* Debug */,
+				DCFA1CF11CA9002B0053FDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCFA1CF31CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFA1CF41CA9002B0053FDCC /* Debug */,
+				DCFA1CF51CA9002B0053FDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCFA1CF71CA9002B0053FDCC /* Build configuration list for PBXNativeTarget "assistme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFA1CF81CA9002B0053FDCC /* Debug */,
+				DCFA1CF91CA9002B0053FDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCFA1CB01CA9002B0053FDCC /* Project object */;
+}
