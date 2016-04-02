@@ -8,14 +8,16 @@
 
 import UIKit
 import JSQMessagesViewController
+import WatchConnectivity
 
 
-class ChatViewController: JSQMessagesViewController {
+class ChatViewController: JSQMessagesViewController, WCSessionDelegate{
   
   
   let api = API.getSingleton()
   var currentDialog:[String:String] = [:]
   var client_id:Int = 0, conversation_id:Int = 0
+  var session:WCSession = WCSession.defaultSession()
   
   let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
   let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
@@ -26,11 +28,18 @@ class ChatViewController: JSQMessagesViewController {
     
     // Do any additional setup after loading the view.
     
+    if (WCSession.isSupported()) {
+      //      session = WCSession.defaultSession()
+      session.delegate = self
+      session.activateSession()
+    }
+    
     title =  "Pizza Chat Bot"
     
-    //    self.getConvoData()
+    self.getConvoData()
     self.setup()
-    self.addDemoMessages()
+    
+    //    self.addDemoMessages()
   }
   
   override func didReceiveMemoryWarning() {
@@ -44,26 +53,30 @@ class ChatViewController: JSQMessagesViewController {
     self.conversation_id = results["conversation"]!["conversation_id"] as! Int
   }
   
-  func updateConverationView(responses:NSArray){
-    for resp in responses{
-      if let resp = resp as? String{
-        //        self.chatInput += "\(resp))\n"
-      }
-    }
-  }
-  
-  
   func getConvoData(params:String? = nil){
+    
     //initate convo
     api.getConversation(params,completionHandler: {data, error -> Void in
       if (data != nil) {
         let results = NSDictionary(dictionary: data) as! [String : AnyObject]
-        let responses = results["conversation"]!["response"] as! NSArray
+        let responses = results["conversation"]!["response"] as! Array<String>
         
-        self.setupIds(results)
+        if self.client_id == 0 || self.conversation_id == 0 {
+          self.setupIds(results)
+        }
         
         self.api.conversations.append(results)
-        self.updateConverationView(responses)
+        for response in responses {
+          if !response.isEmpty {
+            // TODO: make dynamic
+            self.addMessage(JSQMessage(senderId: "chatbot", senderDisplayName: "Pizza Chat Bot", date: NSDate(), text: response))
+          }
+        }
+        
+        //modify UI from main thread
+        dispatch_async(dispatch_get_main_queue(), {
+          self.reloadMessagesView()
+        })
         
       } else {
         print("api.getData failed")
@@ -73,17 +86,30 @@ class ChatViewController: JSQMessagesViewController {
     
   }
   
-  @IBAction func sendChat() {
-    var params = ""
-    //    if client_id != 0 && conversation_id != 0 {
-    //      params = "input=\(self.chatInput.text)&client_id=\(self.client_id)&conversation_id=\(self.conversation_id)"
-    //    }
+  func updateWatch() {
     
-    self.getConvoData(params)
+    if (WCSession.defaultSession().reachable) {
+      // TODO: More
+      WCSession.defaultSession().sendMessage(["new data": true],
+                                             replyHandler: {
+                                              (data:[String : AnyObject]) -> Void in
+                                              print("Success")
+        },
+                                             errorHandler: {
+                                              (error:NSError) -> Void in
+                                              print(error)
+      })
+    }
   }
+  
   
   func reloadMessagesView() {
     self.collectionView?.reloadData()
+    //    do {
+    //      self.session.updateApplicationContext(["reload":true])
+    //    } catch {
+    //
+    //    }
   }
   
   /*
@@ -141,9 +167,24 @@ extension ChatViewController {
     return nil
   }
   
-  override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-    let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
+  func addMessage(message:JSQMessage) {
+    if (message.senderId == self.senderId) {
+      api.saveInputs.append(["sender":"user", "message":message.text])
+    } else {
+      api.saveInputs.append(["sender":"bot", "message":message.text])
+    }
     self.messages += [message]
+  }
+  
+  override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
+    addMessage(JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text))
+    
+    var params = ""
+    if client_id != 0 && conversation_id != 0 {
+      params = "input=\(text)&client_id=\(self.client_id)&conversation_id=\(self.conversation_id)"
+    }
+    self.getConvoData(params)
+    
     self.finishSendingMessage()
   }
   

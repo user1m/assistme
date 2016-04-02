@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		37455B6CE2BC064953218E7A /* Pods_assistme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52C74B8748D23618D83A66C /* Pods_assistme.framework */; };
+		DC028D441CB061BE00B1CF1A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CFD1CA901C40053FDCC /* API.swift */; };
+		DC028D461CB0622D00B1CF1A /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC028D451CB0622D00B1CF1A /* RowController.swift */; };
+		DC028D481CB0632C00B1CF1A /* ChatInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC028D471CB0632C00B1CF1A /* ChatInterfaceController.swift */; };
 		DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */; };
 		DCFA1CC11CA9002B0053FDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */; };
 		DCFA1CC31CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */; };
@@ -73,6 +76,8 @@
 /* Begin PBXFileReference section */
 		52D9114C42FF92C19A5A0836 /* Pods-assistme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assistme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-assistme/Pods-assistme.debug.xcconfig"; sourceTree = "<group>"; };
 		6FF79CF22C7CA1B303AD33B6 /* Pods-assistme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-assistme.release.xcconfig"; path = "Pods/Target Support Files/Pods-assistme/Pods-assistme.release.xcconfig"; sourceTree = "<group>"; };
+		DC028D451CB0622D00B1CF1A /* RowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
+		DC028D471CB0632C00B1CF1A /* ChatInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInterfaceController.swift; sourceTree = "<group>"; };
 		DCFA1CB81CA9002B0053FDCC /* assistme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assistme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFA1CC01CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -195,6 +200,8 @@
 				DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */,
 				DCFA1CEC1CA9002B0053FDCC /* Info.plist */,
 				DCFA1CDE1CA9002B0053FDCC /* Supporting Files */,
+				DC028D451CB0622D00B1CF1A /* RowController.swift */,
+				DC028D471CB0632C00B1CF1A /* ChatInterfaceController.swift */,
 			);
 			path = "assistme WatchKit Extension";
 			sourceTree = "<group>";
@@ -416,6 +423,9 @@
 				DCFA1CE31CA9002B0053FDCC /* ExtensionDelegate.swift in Sources */,
 				DCFA1CE91CA9002B0053FDCC /* ComplicationController.swift in Sources */,
 				DCFA1CE11CA9002B0053FDCC /* InterfaceController.swift in Sources */,
+				DC028D441CB061BE00B1CF1A /* API.swift in Sources */,
+				DC028D481CB0632C00B1CF1A /* ChatInterfaceController.swift in Sources */,
+				DC028D461CB0622D00B1CF1A /* RowController.swift in Sources */,
 				DCFA1CE71CA9002B0053FDCC /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,7 +627,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./assistme/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/assistme/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = Pods;
 			};
 			name = Debug;
@@ -631,7 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.claudiusmbemba.assistme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "./assistme/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/assistme/Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = Pods;
 			};
 			name = Release;

@@ -19,9 +19,9 @@ public class API: NSObject {
   //  let conversation:String = "conversation"
   let baseApi = "http://convoapi.azurewebsites.net/"
   let convo = "conversation", dialog = "dialogs"
-  var client_id:String?, conversation_id:String?
   let session = NSURLSession.sharedSession()
   var dialogs:[[String:String]] = []
+  var saveInputs:[Dictionary<String, String>] = []
   var conversations:[[String:AnyObject]] = []
   
   //  init(){
@@ -62,15 +62,17 @@ public class API: NSObject {
   }
   
   // Setup the session to make REST GET call. (HTTPS vs HTTP)
-  func getConversation(params:String? = nil, completionHandler: (([String:AnyObject]!, NSError!) -> Void)!) -> Void
+  func getConversation(params:String?, completionHandler: (([String:AnyObject]!, NSError!) -> Void)!) -> Void
   {
-    var url = NSURL(string: "\(baseApi)\(convo)")!
+    var url:NSURL! = NSURL()
     if (params != nil && !params!.isEmpty)
     {
-       url = NSURL(string: "\(baseApi)\(convo)?\(params)")!
+      url = NSURL(string: "\(baseApi)\(convo)?\(params!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)")
+    } else {
+      url = NSURL(string: "\(baseApi)\(convo)")
     }
     
-    session.dataTaskWithURL(url, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+    session.dataTaskWithURL(url!, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
       
       guard let realResponse = response as? NSHTTPURLResponse where
         realResponse.statusCode == 200 else {
