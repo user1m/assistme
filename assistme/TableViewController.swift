@@ -7,17 +7,17 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 class TableViewController: UITableViewController {
   
-  let api = API.getSingleton()
-  //  let api = [["name":"pizza_sample_cm",
-  //    "dialog_id":"c257fa03-c902-43cc-b6ce-68a32d3ca651"],
-  //             ["name":"pizza_sample_cm",
-  //              "dialog_id":"c257fa03-c902-43cc-b6ce-68a32d3ca651"],
-  //             ["name":"pizza_sample_cm",
-  //              "dialog_id":"c257fa03-c902-43cc-b6ce-68a32d3ca651"]]
-  //  var selectedDialog:[String:String] = [:]
+  var session:WCSession!
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    setupWC()
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,9 +30,9 @@ class TableViewController: UITableViewController {
     
     title = "Pick a Bot"
     
-    api.getDialogs({data, error -> Void in
+    API.getDialogs({data, error -> Void in
       if (data != nil) {
-        self.api.dialogs = NSArray(array: data) as! [[String : String]]
+        API.dialogs = NSArray(array: data) as! [[String : String]]
         self.tableView.reloadData()
       } else {
         print("api.getData failed")
@@ -57,7 +57,7 @@ class TableViewController: UITableViewController {
     //    if api.dialogs.count > 0 {
     //      return api.dialogs.count
     //    }
-    return api.dialogs.count
+    return API.dialogs.count
   }
   
   
@@ -65,8 +65,8 @@ class TableViewController: UITableViewController {
     
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DialogTableViewCell
     
-    cell.titleLabel.text = "Chat Bot: \(api.dialogs[indexPath.row]["name"]!)"
-    cell.descriptionLabel.text = "ID: \(api.dialogs[indexPath.row]["dialog_id"]!)"
+    cell.titleLabel.text = "Chat Bot: \(API.dialogs[indexPath.row]["name"]!)"
+    cell.descriptionLabel.text = "ID: \(API.dialogs[indexPath.row]["dialog_id"]!)"
     
     // Configure the cell...
     
@@ -121,9 +121,21 @@ class TableViewController: UITableViewController {
     // Pass the selected object to the new view controller.
     if (segue.identifier == "chatSegue"){
       let destination = segue.destinationViewController as! ChatViewController
-      destination.currentDialog = api.dialogs[(self.tableView.indexPathForSelectedRow?.row)!] as! [String : String]
+      destination.currentDialog = API.dialogs[(self.tableView.indexPathForSelectedRow?.row)!] as! [String : String]
     }
   }
-  
-  
+}
+
+
+extension TableViewController: WCSessionDelegate {
+
+  func setupWC() {
+    if(WCSession.isSupported()){
+      session = WCSession.defaultSession()
+      session.delegate = self
+      session.activateSession()
+    }
+  }
+
+
 }

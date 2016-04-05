@@ -12,27 +12,22 @@ import UIKit
 
 public class API: NSObject {
   
+  static var savedInputs:[Dictionary<String, String>]!
+  static var dialogs:[[String:String]] = []
+  static var conversations:[[String:AnyObject]] = []
+  
+  static let baseApi = "http://convoapi.azurewebsites.net/"
+  static let convo = "conversation", dialog = "dialogs"
+  static let session = NSURLSession.sharedSession()
+  
   //singleton
-  static let sharedInstance = API()
-  
-  //  let dialog:String = "dialog"
-  //  let conversation:String = "conversation"
-  let baseApi = "http://convoapi.azurewebsites.net/"
-  let convo = "conversation", dialog = "dialogs"
-  let session = NSURLSession.sharedSession()
-  var dialogs:[[String:String]] = []
-  var saveInputs:[Dictionary<String, String>] = []
-  var conversations:[[String:AnyObject]] = []
-  
-  //  init(){
-  //  }
-  
+  private static let sharedInstance = API()
   static func getSingleton() -> API {
     return self.sharedInstance
   }
   
   
-  func getDialogs(completionHandler: ((NSArray!, NSError!) -> Void)!) -> Void
+  static func getDialogs(completionHandler: ((NSArray!, NSError!) -> Void)!) -> Void
   {
     let url = NSURL(string: "\(baseApi)\(dialog)")!
     
@@ -62,7 +57,7 @@ public class API: NSObject {
   }
   
   // Setup the session to make REST GET call. (HTTPS vs HTTP)
-  func getConversation(params:String?, completionHandler: (([String:AnyObject]!, NSError!) -> Void)!) -> Void
+  static func getConversation(params:String?, completionHandler: (([String:AnyObject]!, NSError!) -> Void)!) -> Void
   {
     var url:NSURL! = NSURL()
     if (params != nil && !params!.isEmpty)
@@ -141,6 +136,4 @@ public class API: NSObject {
   //    }).resume()
   //
   //  }
-  
-  
 }

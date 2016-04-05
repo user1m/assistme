@@ -11,37 +11,29 @@ import Foundation
 import WatchConnectivity
 
 
-class ChatInterfaceController: WKInterfaceController, WCSessionDelegate {
+class ChatInterfaceController: WKInterfaceController {
   
-  let api = API.getSingleton()
-  let session = WCSession.defaultSession()
+  var session: WCSession!
   
   @IBOutlet var chatTable: WKInterfaceTable!
   
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
     
-    if (WCSession.isSupported()) {
-      session.delegate = self
-      session.activateSession()
-    }
-    
-    
+    setupWC()
   }
   
   func setupTable() {
-    // Configure interface objects here.
-    
     var currentRow = RowController()
     
-    if api.saveInputs.count != 0 {
-      chatTable.setNumberOfRows(api.saveInputs.count, withRowType: "chatRow")
+    if API.savedInputs.count != 0 {
+      chatTable.setNumberOfRows(API.savedInputs.count, withRowType: "chatRow")
       
       for rowNumber in 0..<self.chatTable.numberOfRows{
         
         currentRow = self.chatTable.rowControllerAtIndex(rowNumber) as! RowController
         //returns generic obj then cast as MovieRowController
-        currentRow.setRow(api.saveInputs[rowNumber])
+        currentRow.setRow(API.savedInputs[rowNumber])
       }
     } else {
       chatTable.setNumberOfRows(1, withRowType: "chatRow")
@@ -53,6 +45,7 @@ class ChatInterfaceController: WKInterfaceController, WCSessionDelegate {
   override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
+    
     setupTable()
     
   }
@@ -61,9 +54,25 @@ class ChatInterfaceController: WKInterfaceController, WCSessionDelegate {
     // This method is called when watch view controller is no longer visible
     super.didDeactivate()
   }
+}
+
+
+extension ChatInterfaceController: WCSessionDelegate {
   
+  func setupWC() {
+    if (WCSession.isSupported()) {
+      session = WCSession.defaultSession()
+      session.delegate = self
+      session.activateSession()
+    }
+  }
+  
+  // mARK: Messaging
   func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
-    setupTable()
+    print(message)
+    if (message["new data"] != nil) {
+      setupTable()
+    }
   }
   
 }

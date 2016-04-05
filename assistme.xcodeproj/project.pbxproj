@@ -197,11 +197,11 @@
 				DCFA1CE41CA9002B0053FDCC /* NotificationController.swift */,
 				DCFA1CE61CA9002B0053FDCC /* GlanceController.swift */,
 				DCFA1CE81CA9002B0053FDCC /* ComplicationController.swift */,
+				DC028D451CB0622D00B1CF1A /* RowController.swift */,
+				DC028D471CB0632C00B1CF1A /* ChatInterfaceController.swift */,
 				DCFA1CEA1CA9002B0053FDCC /* Assets.xcassets */,
 				DCFA1CEC1CA9002B0053FDCC /* Info.plist */,
 				DCFA1CDE1CA9002B0053FDCC /* Supporting Files */,
-				DC028D451CB0622D00B1CF1A /* RowController.swift */,
-				DC028D471CB0632C00B1CF1A /* ChatInterfaceController.swift */,
 			);
 			path = "assistme WatchKit Extension";
 			sourceTree = "<group>";

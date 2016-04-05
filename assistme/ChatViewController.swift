@@ -11,10 +11,9 @@ import JSQMessagesViewController
 import WatchConnectivity
 
 
-class ChatViewController: JSQMessagesViewController, WCSessionDelegate{
+class ChatViewController: JSQMessagesViewController{
   
   
-  let api = API.getSingleton()
   var currentDialog:[String:String] = [:]
   var client_id:Int = 0, conversation_id:Int = 0
   var session:WCSession = WCSession.defaultSession()
@@ -27,12 +26,6 @@ class ChatViewController: JSQMessagesViewController, WCSessionDelegate{
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
-    
-    if (WCSession.isSupported()) {
-      //      session = WCSession.defaultSession()
-      session.delegate = self
-      session.activateSession()
-    }
     
     title =  "Pizza Chat Bot"
     
@@ -56,7 +49,7 @@ class ChatViewController: JSQMessagesViewController, WCSessionDelegate{
   func getConvoData(params:String? = nil){
     
     //initate convo
-    api.getConversation(params,completionHandler: {data, error -> Void in
+    API.getConversation(params,completionHandler: {data, error -> Void in
       if (data != nil) {
         let results = NSDictionary(dictionary: data) as! [String : AnyObject]
         let responses = results["conversation"]!["response"] as! Array<String>
@@ -65,14 +58,14 @@ class ChatViewController: JSQMessagesViewController, WCSessionDelegate{
           self.setupIds(results)
         }
         
-        self.api.conversations.append(results)
+        API.conversations.append(results)
         for response in responses {
           if !response.isEmpty {
             // TODO: make dynamic
             self.addMessage(JSQMessage(senderId: "chatbot", senderDisplayName: "Pizza Chat Bot", date: NSDate(), text: response))
           }
         }
-        
+
         //modify UI from main thread
         dispatch_async(dispatch_get_main_queue(), {
           self.reloadMessagesView()
@@ -86,30 +79,11 @@ class ChatViewController: JSQMessagesViewController, WCSessionDelegate{
     
   }
   
-  func updateWatch() {
-    
-    if (WCSession.defaultSession().reachable) {
-      // TODO: More
-      WCSession.defaultSession().sendMessage(["new data": true],
-                                             replyHandler: {
-                                              (data:[String : AnyObject]) -> Void in
-                                              print("Success")
-        },
-                                             errorHandler: {
-                                              (error:NSError) -> Void in
-                                              print(error)
-      })
-    }
-  }
-  
-  
   func reloadMessagesView() {
     self.collectionView?.reloadData()
-    //    do {
-    //      self.session.updateApplicationContext(["reload":true])
-    //    } catch {
-    //
-    //    }
+    
+    // Message Watch
+    self.updateWatch()
   }
   
   /*
@@ -169,9 +143,9 @@ extension ChatViewController {
   
   func addMessage(message:JSQMessage) {
     if (message.senderId == self.senderId) {
-      api.saveInputs.append(["sender":"user", "message":message.text])
+      API.savedInputs.append(["sender":"user", "message":message.text])
     } else {
-      api.saveInputs.append(["sender":"bot", "message":message.text])
+      API.savedInputs.append(["sender":"bot", "message":message.text])
     }
     self.messages += [message]
   }
@@ -193,4 +167,15 @@ extension ChatViewController {
   }
 }
 
+
+extension ChatViewController {
+  
+  // MARK: Messaging
+  func updateWatch() {
+    if (WCSession.defaultSession().reachable) {
+      WCSession.defaultSession().sendMessage(["new data":true], replyHandler: nil, errorHandler: nil)
+    }
+  }
+
+}
 
