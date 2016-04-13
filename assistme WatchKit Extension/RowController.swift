@@ -11,17 +11,20 @@ import WatchKit
 class RowController: NSObject {
   
   @IBOutlet var chatLabel: WKInterfaceLabel!
+  @IBOutlet var lblBackground: WKInterfaceGroup!
   
-  func setRow(data:Dictionary<String, String>) {
-    switch data["sender"]! {
-    case "user":
-      self.chatLabel.setTextColor(UIColor.blueColor())
-      self.chatLabel.setText(data["message"])
-    case "bot":
+  func setRow(data:[String : String]) {
+    
+    //user
+    if (data["user"] != nil) {
+      self.lblBackground.setBackgroundColor(UIColor.lightGrayColor())
       self.chatLabel.setTextColor(UIColor.whiteColor())
-      self.chatLabel.setText(data["message"])
-    default:
-      break
+      self.chatLabel.setText(data["user"])
+    } else {
+      //bot
+      self.lblBackground.setBackgroundColor(UIColor.blueColor())
+      self.chatLabel.setTextColor(UIColor.whiteColor())
+      self.chatLabel.setText(data["bot"])
     }
   }
   

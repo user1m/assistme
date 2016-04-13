@@ -10,22 +10,34 @@ import Foundation
 import UIKit
 
 
-public class API: NSObject {
-  
-  static var savedInputs:[Dictionary<String, String>]!
-  static var dialogs:[[String:String]] = []
-  static var conversations:[[String:AnyObject]] = []
+public class API {
   
   static let baseApi = "http://convoapi.azurewebsites.net/"
   static let convo = "conversation", dialog = "dialogs"
   static let session = NSURLSession.sharedSession()
   
+  // MARK: Singleton
   //singleton
-  private static let sharedInstance = API()
-  static func getSingleton() -> API {
-    return self.sharedInstance
+  //  public static var sharedInstance: API? = API()
+  public static let sharedInstance: API = API()
+  //empty private constructor
+  private init() {
+    savedInputs = []
+    dialogs = []
+    conversations = []
   }
   
+  public var savedInputs:[[String : String]]!
+  public var dialogs:[[String:String]]!
+  public var conversations:[[String:AnyObject]]!
+  
+  //  static func getSharedInstance() -> API {
+  //    if ( sharedInstance != nil) {
+  //      return sharedInstance!;
+  //    }
+  //    sharedInstance = API()
+  //    return sharedInstance!
+  //  }
   
   static func getDialogs(completionHandler: ((NSArray!, NSError!) -> Void)!) -> Void
   {

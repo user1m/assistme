@@ -36,11 +36,14 @@
                                 <tableRow identifier="chatRow" selectable="NO" id="b60-6j-mJ7" customClass="RowController" customModule="assistme_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="vIy-Xw-Bak">
                                         <items>
-                                            <label width="1" height="1" alignment="left" text="Label" numberOfLines="4" id="45k-Vc-VTe"/>
+                                            <label width="1" height="1" alignment="left" numberOfLines="10" id="45k-Vc-VTe">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </label>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="chatLabel" destination="45k-Vc-VTe" id="xhG-Rm-CI4"/>
+                                        <outlet property="lblBackground" destination="vIy-Xw-Bak" id="Pbq-p8-WYr"/>
                                     </connections>
                                 </tableRow>
                             </items>

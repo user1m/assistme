@@ -14,6 +14,7 @@ import WatchConnectivity
 class ChatInterfaceController: WKInterfaceController {
   
   var session: WCSession!
+  static var data:[[String : String]]! = []
   
   @IBOutlet var chatTable: WKInterfaceTable!
   
@@ -26,14 +27,14 @@ class ChatInterfaceController: WKInterfaceController {
   func setupTable() {
     var currentRow = RowController()
     
-    if API.savedInputs.count != 0 {
-      chatTable.setNumberOfRows(API.savedInputs.count, withRowType: "chatRow")
+    if ChatInterfaceController.data.count != 0 {
+      chatTable.setNumberOfRows(ChatInterfaceController.data.count, withRowType: "chatRow")
       
       for rowNumber in 0..<self.chatTable.numberOfRows{
         
         currentRow = self.chatTable.rowControllerAtIndex(rowNumber) as! RowController
         //returns generic obj then cast as MovieRowController
-        currentRow.setRow(API.savedInputs[rowNumber])
+        currentRow.setRow(ChatInterfaceController.data[rowNumber])
       }
     } else {
       chatTable.setNumberOfRows(1, withRowType: "chatRow")
@@ -64,13 +65,19 @@ extension ChatInterfaceController: WCSessionDelegate {
       session = WCSession.defaultSession()
       session.delegate = self
       session.activateSession()
+      do {
+        if (session.reachable) {
+          session.sendMessage(["status":"initialiing"], replyHandler: nil, errorHandler: nil)
+        }
+      }
     }
   }
   
   // mARK: Messaging
   func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
     print(message)
-    if (message["new data"] != nil) {
+    if (message["data"] != nil) {
+      ChatInterfaceController.data.insert((message["data"] as! [String : String]), atIndex: 0)
       setupTable()
     }
   }

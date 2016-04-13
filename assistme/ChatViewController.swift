@@ -13,8 +13,8 @@ import WatchConnectivity
 
 class ChatViewController: JSQMessagesViewController{
   
-  
   var currentDialog:[String:String] = [:]
+  var id:String!
   var client_id:Int = 0, conversation_id:Int = 0
   var session:WCSession = WCSession.defaultSession()
   
@@ -26,6 +26,7 @@ class ChatViewController: JSQMessagesViewController{
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    setupWC()
     
     title =  "Pizza Chat Bot"
     
@@ -58,14 +59,15 @@ class ChatViewController: JSQMessagesViewController{
           self.setupIds(results)
         }
         
-        API.conversations.append(results)
+        API.sharedInstance.conversations.append(results)
         for response in responses {
           if !response.isEmpty {
             // TODO: make dynamic
             self.addMessage(JSQMessage(senderId: "chatbot", senderDisplayName: "Pizza Chat Bot", date: NSDate(), text: response))
+            self.updateWatch(["bot":response])
           }
         }
-
+        
         //modify UI from main thread
         dispatch_async(dispatch_get_main_queue(), {
           self.reloadMessagesView()
@@ -83,7 +85,7 @@ class ChatViewController: JSQMessagesViewController{
     self.collectionView?.reloadData()
     
     // Message Watch
-    self.updateWatch()
+//    self.updateWatch()
   }
   
   /*
@@ -143,9 +145,9 @@ extension ChatViewController {
   
   func addMessage(message:JSQMessage) {
     if (message.senderId == self.senderId) {
-      API.savedInputs.append(["sender":"user", "message":message.text])
+      API.sharedInstance.savedInputs.append(["user":message.text])
     } else {
-      API.savedInputs.append(["sender":"bot", "message":message.text])
+      API.sharedInstance.savedInputs.append(["bot":message.text])
     }
     self.messages += [message]
   }
@@ -159,6 +161,8 @@ extension ChatViewController {
     }
     self.getConvoData(params)
     
+    updateWatch(["user":text])
+    
     self.finishSendingMessage()
   }
   
@@ -168,14 +172,34 @@ extension ChatViewController {
 }
 
 
-extension ChatViewController {
+extension ChatViewController: WCSessionDelegate {
   
   // MARK: Messaging
-  func updateWatch() {
+  func updateWatch(data:[String : String]!) {
     if (WCSession.defaultSession().reachable) {
-      WCSession.defaultSession().sendMessage(["new data":true], replyHandler: nil, errorHandler: nil)
+      session.sendMessage(["data" : data], replyHandler: nil, errorHandler: nil)
     }
   }
-
+  
+  func setupWC() {
+    if(WCSession.isSupported()){
+      session = WCSession.defaultSession()
+      session.delegate = self
+      session.activateSession()
+      
+      do {
+        if (session.reachable) {
+          session.sendMessage(["status":"initialiing"], replyHandler: nil, errorHandler: nil)
+        }
+      }
+    }
+  }
+  
+  func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+    print(message)
+  }
+  
+  
+  
 }
 

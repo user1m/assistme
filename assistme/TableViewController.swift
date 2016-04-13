@@ -8,15 +8,23 @@
 
 import UIKit
 import WatchConnectivity
+import PKHUD
 
 class TableViewController: UITableViewController {
   
   var session:WCSession!
+  var botList:[String : String] = ["Pizza Bot" : "Pizza bot here to help fulfill all your cheesey desires.",
+                                   "Travel Bot" : "Travel bot here to help explore new places in the world.",
+                                   "Shopper Bot" : "Shop til you drop.",
+                                   "Fashion Bot" : "Learn about the latest fashion trends from me. \n Shopper and I are best friends",
+                                   "Local News Bot" : "I'll fill you in on what's happening in your local area.",
+                                   "Entertainment Bot" : "You want celeb gossip and entertainment industry news then I'm your bot!",
+                                   "Music Bot" : "I learn your musical taste and help you explore it."]
+  var id = "c257fa03-c902-43cc-b6ce-68a32d3ca651";
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     
-    setupWC()
   }
   
   override func viewDidLoad() {
@@ -28,18 +36,25 @@ class TableViewController: UITableViewController {
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     
-    title = "Pick a Bot"
+    title = "Select a Bot"
+    
+    HUD.show(.Progress)
     
     API.getDialogs({data, error -> Void in
       if (data != nil) {
-        API.dialogs = NSArray(array: data) as! [[String : String]]
-        self.tableView.reloadData()
+        API.sharedInstance.dialogs.appendContentsOf(NSArray(array: data) as! [[String : String]])
+        dispatch_async(dispatch_get_main_queue(), {
+          HUD.flash(.Success, delay: 0.5)
+//          self.tableView.reloadData()
+        })
       } else {
         print("api.getData failed")
         print(error)
+        dispatch_async(dispatch_get_main_queue(), {
+          HUD.flash(.Error, delay: 0.5)
+        })
       }
     })
-    
   }
   
   override func didReceiveMemoryWarning() {
@@ -57,16 +72,20 @@ class TableViewController: UITableViewController {
     //    if api.dialogs.count > 0 {
     //      return api.dialogs.count
     //    }
-    return API.dialogs.count
+    //    return API.sharedInstance.dialogs.count
+    return botList.count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
+    let intIndex = indexPath.row
+    let index = botList.startIndex.advancedBy(intIndex)
+    
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DialogTableViewCell
     
-    cell.titleLabel.text = "Chat Bot: \(API.dialogs[indexPath.row]["name"]!)"
-    cell.descriptionLabel.text = "ID: \(API.dialogs[indexPath.row]["dialog_id"]!)"
+    cell.titleLabel.text = "\(botList.keys[index])"
+    cell.descriptionLabel.text = "\(botList.values[index])"
     
     // Configure the cell...
     
@@ -121,21 +140,14 @@ class TableViewController: UITableViewController {
     // Pass the selected object to the new view controller.
     if (segue.identifier == "chatSegue"){
       let destination = segue.destinationViewController as! ChatViewController
-      destination.currentDialog = API.dialogs[(self.tableView.indexPathForSelectedRow?.row)!] as! [String : String]
+      destination.currentDialog = API.sharedInstance.dialogs[0]
+      destination.id = self.id
+//      destination.currentDialog = API.sharedInstance.dialogs[(self.tableView.indexPathForSelectedRow?.row)!]
     }
   }
 }
 
 
-extension TableViewController: WCSessionDelegate {
-
-  func setupWC() {
-    if(WCSession.isSupported()){
-      session = WCSession.defaultSession()
-      session.delegate = self
-      session.activateSession()
-    }
-  }
-
-
+extension TableViewController {
+  
 }
