@@ -59,7 +59,7 @@ class InterfaceController: WKInterfaceController {
       let currentRow = self.chatTable.rowControllerAtIndex(rowNumber) as! ListRow
       let index = API.botList.startIndex.advancedBy(rowNumber)
       currentRow.chatBotLbl.setText(API.botList.keys[index])
-//      currentRow.chatBotIcon.setImageNamed("\(API.botList.values[index][1])")
+      currentRow.chatBotIcon.setImageNamed("\(API.botList.values[index][1])")
     }
   }
   

@@ -15,8 +15,10 @@
                                 <tableRow identifier="listRow" id="WRJ-zP-1T9" customClass="ListRow" customModule="assistme_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="uLu-X8-b5h">
                                         <items>
-                                            <imageView width="0.29999999999999999" height="0.90000000000000002" alignment="left" verticalAlignment="center" image="shopper_icon" id="gPz-p8-1Cm"/>
-                                            <label alignment="left" id="bnF-Yq-PcO"/>
+                                            <imageView width="0.29999999999999999" height="0.90000000000000002" alignment="left" verticalAlignment="center" id="gPz-p8-1Cm"/>
+                                            <label alignment="left" verticalAlignment="center" numberOfLines="2" id="bnF-Yq-PcO">
+                                                <fontDescription key="font" type="system" weight="semibold" pointSize="12"/>
+                                            </label>
                                         </items>
                                     </group>
                                     <connections>
