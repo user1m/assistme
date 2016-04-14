@@ -1,5 +1,5 @@
 //
-//  RowController.swift
+//  ChatRow.swift
 //  assistme
 //
 //  Created by Claudius Mbemba on 4/2/16.
@@ -8,7 +8,7 @@
 
 import WatchKit
 
-class RowController: NSObject {
+class ChatRow: NSObject {
   
   @IBOutlet var chatLabel: WKInterfaceLabel!
   @IBOutlet var lblBackground: WKInterfaceGroup!

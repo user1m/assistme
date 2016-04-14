@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GPR-Y8-OBN">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
@@ -12,16 +12,25 @@
                     <items>
                         <table alignment="left" id="Lo6-Jo-qwH">
                             <items>
-                                <tableRow id="WRJ-zP-1T9">
+                                <tableRow identifier="listRow" id="WRJ-zP-1T9" customClass="ListRow" customModule="assistme_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="uLu-X8-b5h">
                                         <items>
-                                            <button width="1" alignment="left" title="Button" id="dYF-s1-2bT"/>
+                                            <imageView width="0.29999999999999999" height="0.90000000000000002" alignment="left" verticalAlignment="center" image="shopper_icon" id="gPz-p8-1Cm"/>
+                                            <label alignment="left" id="bnF-Yq-PcO"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="chatBotIcon" destination="gPz-p8-1Cm" id="ZeX-Pz-GZc"/>
+                                        <outlet property="chatBotLbl" destination="bnF-Yq-PcO" id="8CY-gj-vOZ"/>
+                                        <segue destination="GPR-Y8-OBN" kind="modal" identifier="chat" id="chr-uQ-0D3"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="chatTable" destination="Lo6-Jo-qwH" id="Vye-C4-4Jm"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
@@ -33,7 +42,7 @@
                     <items>
                         <table alignment="left" id="Iaf-yx-51i">
                             <items>
-                                <tableRow identifier="chatRow" selectable="NO" id="b60-6j-mJ7" customClass="RowController" customModule="assistme_WatchKit_Extension">
+                                <tableRow identifier="chatRow" selectable="NO" id="b60-6j-mJ7" customClass="ChatRow" customModule="assistme_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="vIy-Xw-Bak">
                                         <items>
                                             <label width="1" height="1" alignment="left" numberOfLines="10" id="45k-Vc-VTe">
@@ -54,7 +63,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="467" y="347"/>
+            <point key="canvasLocation" x="516" y="347"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">

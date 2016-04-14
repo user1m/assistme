@@ -13,16 +13,6 @@ import PKHUD
 class TableViewController: UITableViewController {
   
   var session:WCSession!
-  let botList:[String : AnyObject] = [
-    "Pizza Bot" : ["Pizza bot here to help fulfill all your cheesey desires.", "pizza_icon"],
-    "Travel Bot" : ["Travel bot here to help explore new places in the world.", "travel_icon"],
-    "Shopper Bot" : ["Shop til you drop.", "shopper_icon"],
-    "Fashion Bot" : ["Learn about the latest fashion trends from me.", "fashion_icon"],
-    "Local News Bot" : ["I'll fill you in on what's happening in your local area.", "local_news_icon"],
-    "Entertainment Bot" : ["You want celeb gossip and entertainment industry news then I'm your bot!", "entertainment_icon"],
-    "Music Bot" : ["I learn your musical taste and help you explore it.", "music_icon"],
-    "More bots coming soon ..." : ["More bots will be added for you to interact with soon", "blank_icon"]
-  ]
   //  let id = "c257fa03-c902-43cc-b6ce-68a32d3ca651";
   
   override func viewWillAppear(animated: Bool) {
@@ -43,21 +33,21 @@ class TableViewController: UITableViewController {
     
     HUD.show(.Progress)
     
-    //    API.getDialogs({data, error -> Void in
-    //      if (data != nil) {
-    //        API.sharedInstance.dialogs.appendContentsOf(NSArray(array: data) as! [[String : String]])
-    //        dispatch_async(dispatch_get_main_queue(), {
-    //          HUD.flash(.Success, delay: 0.5)
-    ////          self.tableView.reloadData()
-    //        })
-    //      } else {
-    //        print("api.getData failed")
-    //        print(error)
-    //        dispatch_async(dispatch_get_main_queue(), {
-    //          HUD.flash(.Error, delay: 0.5)
-    //        })
-    //      }
-    //    })
+//    API.getDialogs({data, error -> Void in
+//      if (data != nil) {
+//        API.sharedInstance.dialogs.appendContentsOf(NSArray(array: data) as! [[String : String]])
+//        dispatch_async(dispatch_get_main_queue(), {
+//          HUD.flash(.Success, delay: 0.5)
+//          //          self.tableView.reloadData()
+//        })
+//      } else {
+//        print("api.getData failed")
+//        print(error)
+//        dispatch_async(dispatch_get_main_queue(), {
+//          HUD.flash(.Error, delay: 0.5)
+//        })
+//      }
+//    })
     
     HUD.flash(.Success, delay: 0.5)
     
@@ -79,20 +69,20 @@ class TableViewController: UITableViewController {
     //      return api.dialogs.count
     //    }
     //    return API.sharedInstance.dialogs.count
-    return botList.count
+    return API.botList.count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
     let intIndex = indexPath.row
-    let index = botList.startIndex.advancedBy(intIndex)
+    let index = API.botList.startIndex.advancedBy(intIndex)
     
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DialogTableViewCell
     
-    cell.titleLabel.text = "\(botList.keys[index])"
-    cell.descriptionLabel.text = "\(botList.values[index][0])"
-    cell.botImage.image = UIImage(named: "\(botList.values[index][1])")
+    cell.titleLabel.text = "\(API.botList.keys[index])"
+    cell.descriptionLabel.text = "\(API.botList.values[index][0])"
+    cell.botImage.image = UIImage(named: "\(API.botList.values[index][1])")
     
     // Configure the cell...
     
@@ -147,11 +137,18 @@ class TableViewController: UITableViewController {
     // Pass the selected object to the new view controller.
     if (segue.identifier == "chatSegue"){
       let destination = segue.destinationViewController as! ChatViewController
-      let index = botList.startIndex.advancedBy((self.tableView.indexPathForSelectedRow?.row)!)
-      destination.bot = botList.keys[index]
+      let index = API.botList.startIndex.advancedBy((self.tableView.indexPathForSelectedRow?.row)!)
+      let botName = API.botList.keys[index]
+      destination.bot = botName
+      if (botName == "Shopper Bot") {
+        destination.id = "48dbb947-f2d3-4d9d-b7ca-aee86c0a5c23" //API.sharedInstance.dialogs[1]["dialog_id"]
+      } else {
+        destination.id = "736546c7-bea9-441f-8a53-07a5502cae3b"
+      }
       //      if (API.sharedInstance.dialogs.count > 0) {
       //        destination.currentDialog = API.sharedInstance.dialogs[0]
-      //      } else {
+      //      }
+      //      else {
       //        destination.id = self.id
       //      }
       //      destination.currentDialog = API.sharedInstance.dialogs[(self.tableView.indexPathForSelectedRow?.row)!]

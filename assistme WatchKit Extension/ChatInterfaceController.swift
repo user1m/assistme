@@ -21,24 +21,28 @@ class ChatInterfaceController: WKInterfaceController {
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
     
+    if context != nil {
+      setTitle("< "+(context as? String)!)
+    }
+    
     setupWC()
   }
   
   func setupTable() {
-    var currentRow = RowController()
+    var currentRow = ChatRow()
     
     if ChatInterfaceController.data.count != 0 {
       chatTable.setNumberOfRows(ChatInterfaceController.data.count, withRowType: "chatRow")
       
       for rowNumber in 0..<self.chatTable.numberOfRows{
         
-        currentRow = self.chatTable.rowControllerAtIndex(rowNumber) as! RowController
+        currentRow = self.chatTable.rowControllerAtIndex(rowNumber) as! ChatRow
         //returns generic obj then cast as MovieRowController
         currentRow.setRow(ChatInterfaceController.data[rowNumber])
       }
     } else {
       chatTable.setNumberOfRows(1, withRowType: "chatRow")
-      currentRow = self.chatTable.rowControllerAtIndex(0) as! RowController
+      currentRow = self.chatTable.rowControllerAtIndex(0) as! ChatRow
       currentRow.setUpNoData()
     }
   }

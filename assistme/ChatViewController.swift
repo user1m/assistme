@@ -13,8 +13,8 @@ import PKHUD
 
 class ChatViewController: JSQMessagesViewController{
   
-  //  var currentDialog:[String:String] = [:]
-  //  var id:String!
+  //    var currentDialog:[String:String] = [:]
+  var id:String! = ""
   var bot: String! = ""
   var client_id:Int = 0, conversation_id:Int = 0
   var session:WCSession = WCSession.defaultSession()
@@ -29,11 +29,13 @@ class ChatViewController: JSQMessagesViewController{
     // Do any additional setup after loading the view.
     setupWC()
     
+    print(self.id)
+    
     title =  "\(bot)"
     
     HUD.show(.Progress)
     
-    self.getConvoData()
+    self.getConvoData("id=\(self.id)")
     self.setup()
     
     //    self.addDemoMessages()
@@ -57,7 +59,8 @@ class ChatViewController: JSQMessagesViewController{
       if (data != nil) {
         let results = NSDictionary(dictionary: data) as! [String : AnyObject]
         let responses = results["conversation"]!["response"] as! Array<String>
-        
+//        if ( results["error"] == nil) {
+
         if self.client_id == 0 || self.conversation_id == 0 {
           self.setupIds(results)
         }
@@ -76,7 +79,8 @@ class ChatViewController: JSQMessagesViewController{
           self.reloadMessagesView()
           HUD.flash(.Success, delay: 0.5)
         })
-        
+//      }
+      
       } else {
         dispatch_async(dispatch_get_main_queue(), {
           HUD.flash(.Error, delay: 0.5)
@@ -164,7 +168,7 @@ extension ChatViewController {
     
     var params = ""
     if client_id != 0 && conversation_id != 0 {
-      params = "input=\(text)&client_id=\(self.client_id)&conversation_id=\(self.conversation_id)"
+      params = "id=\(self.id)&input=\(text)&client_id=\(self.client_id)&conversation_id=\(self.conversation_id)"
     }
     
     updateWatch(["user":text])
