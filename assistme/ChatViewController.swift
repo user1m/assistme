@@ -9,12 +9,13 @@
 import UIKit
 import JSQMessagesViewController
 import WatchConnectivity
-
+import PKHUD
 
 class ChatViewController: JSQMessagesViewController{
   
-  var currentDialog:[String:String] = [:]
-  var id:String!
+  //  var currentDialog:[String:String] = [:]
+  //  var id:String!
+  var bot: String! = ""
   var client_id:Int = 0, conversation_id:Int = 0
   var session:WCSession = WCSession.defaultSession()
   
@@ -28,7 +29,9 @@ class ChatViewController: JSQMessagesViewController{
     // Do any additional setup after loading the view.
     setupWC()
     
-    title =  "Pizza Chat Bot"
+    title =  "\(bot)"
+    
+    HUD.show(.Progress)
     
     self.getConvoData()
     self.setup()
@@ -71,9 +74,13 @@ class ChatViewController: JSQMessagesViewController{
         //modify UI from main thread
         dispatch_async(dispatch_get_main_queue(), {
           self.reloadMessagesView()
+          HUD.flash(.Success, delay: 0.5)
         })
         
       } else {
+        dispatch_async(dispatch_get_main_queue(), {
+          HUD.flash(.Error, delay: 0.5)
+        })
         print("api.getData failed")
         print(error)
       }
@@ -85,7 +92,7 @@ class ChatViewController: JSQMessagesViewController{
     self.collectionView?.reloadData()
     
     // Message Watch
-//    self.updateWatch()
+    //    self.updateWatch()
   }
   
   /*
@@ -159,9 +166,10 @@ extension ChatViewController {
     if client_id != 0 && conversation_id != 0 {
       params = "input=\(text)&client_id=\(self.client_id)&conversation_id=\(self.conversation_id)"
     }
-    self.getConvoData(params)
     
     updateWatch(["user":text])
+    
+    self.getConvoData(params)
     
     self.finishSendingMessage()
   }
