@@ -11,6 +11,5 @@ import WatchKit
 class ListRow: NSObject {
 
   @IBOutlet var chatBotLbl: WKInterfaceLabel!
-  
   @IBOutlet var chatBotIcon: WKInterfaceImage!
 }

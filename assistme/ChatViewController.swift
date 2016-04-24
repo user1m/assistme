@@ -15,7 +15,7 @@ class ChatViewController: JSQMessagesViewController{
   
   //    var currentDialog:[String:String] = [:]
   var id:String! = ""
-  var bot: String! = ""
+  var botName: String! = ""
   var client_id:Int = 0, conversation_id:Int = 0
   var session:WCSession = WCSession.defaultSession()
   
@@ -29,9 +29,9 @@ class ChatViewController: JSQMessagesViewController{
     // Do any additional setup after loading the view.
     setupWC()
     
-    print(self.id)
+    //print(self.id)
     
-    title =  "\(bot)"
+    title =  "\(botName)"
     
     HUD.show(.Progress)
     
@@ -59,8 +59,8 @@ class ChatViewController: JSQMessagesViewController{
       if (data != nil) {
         let results = NSDictionary(dictionary: data) as! [String : AnyObject]
         let responses = results["conversation"]!["response"] as! Array<String>
-//        if ( results["error"] == nil) {
-
+        //        if ( results["error"] == nil) {
+        
         if self.client_id == 0 || self.conversation_id == 0 {
           self.setupIds(results)
         }
@@ -69,7 +69,7 @@ class ChatViewController: JSQMessagesViewController{
         for response in responses {
           if !response.isEmpty {
             // TODO: make dynamic
-            self.addMessage(JSQMessage(senderId: "chatbot", senderDisplayName: "Pizza Chat Bot", date: NSDate(), text: response))
+            self.addMessage(JSQMessage(senderId: "chatbot", senderDisplayName: "\(self.botName)", date: NSDate(), text: response))
             self.updateWatch(["bot":response])
           }
         }
@@ -79,8 +79,6 @@ class ChatViewController: JSQMessagesViewController{
           self.reloadMessagesView()
           HUD.flash(.Success, delay: 0.5)
         })
-//      }
-      
       } else {
         dispatch_async(dispatch_get_main_queue(), {
           HUD.flash(.Error, delay: 0.5)
@@ -112,15 +110,15 @@ class ChatViewController: JSQMessagesViewController{
 }
 
 extension ChatViewController {
-  func addDemoMessages() {
-    for i in 1...10 {
-      let sender = (i%2 == 0) ? "Server" : self.senderId
-      let messageContent = "Message nr. \(i)"
-      let message = JSQMessage(senderId: sender, displayName: sender, text: messageContent)
-      self.messages += [message]
-    }
-    self.reloadMessagesView()
-  }
+//  func addDemoMessages() {
+//    for i in 1...10 {
+//      let sender = (i%2 == 0) ? "Server" : self.senderId
+//      let messageContent = "Message nr. \(i)"
+//      let message = JSQMessage(senderId: sender, displayName: sender, text: messageContent)
+//      self.messages += [message]
+//    }
+//    self.reloadMessagesView()
+//  }
   
   func setup() {
     self.senderId = UIDevice.currentDevice().identifierForVendor?.UUIDString
@@ -173,14 +171,31 @@ extension ChatViewController {
     
     updateWatch(["user":text])
     
-    self.getConvoData(params)
-    
+    if( classify(text) ) {
+      API.classify({reply -> Void in
+        self.addMessage(JSQMessage(senderId: "chatbot", senderDisplayName: "\(self.botName)", date: NSDate(), text: reply))
+        self.updateWatch(["bot":reply])
+        
+        //modify UI from main thread
+        dispatch_async(dispatch_get_main_queue(), {
+          self.reloadMessagesView()
+          HUD.flash(.Success, delay: 0.5)
+        })
+      })
+    } else {
+      self.getConvoData(params)
+    }
     self.finishSendingMessage()
   }
   
   override func didPressAccessoryButton(sender: UIButton!) {
     
   }
+  
+  func classify(text:String!) -> Bool {
+    return botName != "Pizza Bot" && text.lowercaseString.rangeOfString("pizza") != nil
+  }
+  
 }
 
 

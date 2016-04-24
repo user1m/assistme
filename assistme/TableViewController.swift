@@ -69,20 +69,20 @@ class TableViewController: UITableViewController {
     //      return api.dialogs.count
     //    }
     //    return API.sharedInstance.dialogs.count
-    return API.botList.count
+    return Data.botList.count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
     let intIndex = indexPath.row
-    let index = API.botList.startIndex.advancedBy(intIndex)
+    let index = Data.botList.startIndex.advancedBy(intIndex)
     
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DialogTableViewCell
     
-    cell.titleLabel.text = "\(API.botList.keys[index])"
-    cell.descriptionLabel.text = "\(API.botList.values[index][0])"
-    cell.botImage.image = UIImage(named: "\(API.botList.values[index][1])")
+    cell.titleLabel.text = "\(Data.botList.keys[index])"
+    cell.descriptionLabel.text = "\(Data.botList.values[index][0])"
+    cell.botImage.image = UIImage(named: "\(Data.botList.values[index][1])")
     
     // Configure the cell...
     
@@ -137,9 +137,9 @@ class TableViewController: UITableViewController {
     // Pass the selected object to the new view controller.
     if (segue.identifier == "chatSegue"){
       let destination = segue.destinationViewController as! ChatViewController
-      let index = API.botList.startIndex.advancedBy((self.tableView.indexPathForSelectedRow?.row)!)
-      let botName = API.botList.keys[index]
-      destination.bot = botName
+      let index = Data.botList.startIndex.advancedBy((self.tableView.indexPathForSelectedRow?.row)!)
+      let botName = Data.botList.keys[index]
+      destination.botName = botName
       if (botName == "Shopper Bot") {
         destination.id = "48dbb947-f2d3-4d9d-b7ca-aee86c0a5c23" //API.sharedInstance.dialogs[1]["dialog_id"]
       } else {

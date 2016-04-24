@@ -8,23 +8,14 @@
 
 import Foundation
 import UIKit
-//import PKHUD
+import PKHUD
+import Alamofire
 
 public class API {
   
   static let baseApi = "http://convoapi.azurewebsites.net/"
   static let convo = "conversation", dialog = "dialogs"
   static let session = NSURLSession.sharedSession()
-  static let botList:[String : AnyObject] = [
-    "Pizza Bot" : ["Pizza bot here to help fulfill all your cheesey desires.", "pizza_icon"],
-    "Travel Bot" : ["Travel bot here to help explore new places in the world.", "travel_icon"],
-    "Shopper Bot" : ["Shop til you drop.", "shopper_icon"],
-    "Fashion Bot" : ["Learn about the latest fashion trends from me.", "fashion_icon"],
-    "Local News Bot" : ["I'll fill you in on what's happening in your local area.", "local_news_icon"],
-    "Entertainment Bot" : ["You want celeb gossip and entertainment industry news then I'm your bot!", "entertainment_icon"],
-    "Music Bot" : ["I learn your musical taste and help you explore it.", "music_icon"],
-    "More bots coming soon ..." : ["More bots will be added for you to interact with soon", "blank_icon"]
-  ]
   
   // MARK: Singleton
   //singleton
@@ -51,77 +42,132 @@ public class API {
   
   static func getDialogs(completionHandler: ((NSArray!, NSError!) -> Void)!) -> Void
   {
-    let url = NSURL(string: "\(baseApi)\(dialog)")!
     
-    session.dataTaskWithURL(url, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-      
-      guard let realResponse = response as? NSHTTPURLResponse where
-        realResponse.statusCode == 200 else {
-          print(response)
-          print("Not a 200 response")
-          
-//          dispatch_async(dispatch_get_main_queue(), {
-//            HUD.flash(.Error, delay: 0.5)
-//          })
-          return
-      }
-      
-      // Read the JSON
-      do {
-        if let result = NSString(data:data!, encoding: NSUTF8StringEncoding) {
-          print(result)
-          
-          // Parse the JSON to get the data
-          let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
-          //          self.performSelectorOnMainThread(#selector(API.gotData(_:)), withObject: jsonDictionary, waitUntilDone: true)
-          return completionHandler(json, nil)
+    Alamofire.request(.GET, "\(baseApi)\(dialog)")
+      .responseJSON { response in
+        if let JSON = response.result.value {
+          //          print(JSON["reply"])
+          return completionHandler(JSON as! NSArray , nil)
         }
-      } catch {
-        error
-        //        print("Error: Failed to getdialogs ")
-      }
-    }).resume()
+    }
+    
+    //    let url = NSURL(string: "\(baseApi)\(dialog)")!
+    //
+    //    session.dataTaskWithURL(url, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+    //
+    //      guard let realResponse = response as? NSHTTPURLResponse where
+    //        realResponse.statusCode == 200 else {
+    //          print(response)
+    //          print("Not a 200 response")
+    //
+    //          dispatch_async(dispatch_get_main_queue(), {
+    //            HUD.flash(.Error, delay: 0.5)
+    //          })
+    //          return
+    //      }
+    //
+    //      // Read the JSON
+    //      do {
+    //        if let result = NSString(data:data!, encoding: NSUTF8StringEncoding) {
+    //          // print(result)
+    //          // Parse the JSON to get the data
+    //          let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! [NSDictionary]
+    //          //          self.performSelectorOnMainThread(#selector(API.gotData(_:)), withObject: jsonDictionary, waitUntilDone: true)
+    //          return completionHandler(json, nil)
+    //        }
+    //      } catch {
+    //        error
+    //        //        print("Error: Failed to getdialogs ")
+    //      }
+    //    }).resume()
   }
   
   // Setup the session to make REST GET call. (HTTPS vs HTTP)
   static func getConversation(params:String?, completionHandler: (([String:AnyObject]!, NSError!) -> Void)!) -> Void
   {
-    var url:NSURL! = NSURL()
-    if (params != nil && !params!.isEmpty)
-    {
-      url = NSURL(string: "\(baseApi)\(convo)?\(params!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)")
-    } else {
-      url = NSURL(string: "\(baseApi)\(convo)")
+    Alamofire.request(.GET, (params != nil && !params!.isEmpty) ? "\(baseApi)\(convo)?\(params!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)" : "\(baseApi)\(convo)")
+      .responseJSON { response in
+        if let JSON = response.result.value {
+          //          print(JSON["reply"])
+          return completionHandler(JSON as! [String : AnyObject], nil)
+        }
     }
     
-    session.dataTaskWithURL(url!, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-      
-      guard let realResponse = response as? NSHTTPURLResponse where
-        realResponse.statusCode == 200 else {
-          print(response)
-          print("Not a 200 response")
-          
-//          dispatch_async(dispatch_get_main_queue(), {
-//            HUD.flash(.Error, delay: 0.5)
-//          })
-          return
-      }
-      
-      // Read the JSON
-      do {
-        if let result = NSString(data:data!, encoding: NSUTF8StringEncoding) {
-          print(result)
-          
-          // Parse the JSON to get the data
-          let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! [String:AnyObject]
-          return completionHandler(json, nil)
-        }
-      } catch {
-        error
-        //        print("Error: Failed to get conversation ")
-      }
-    }).resume()
+    //    var url:NSURL! = NSURL()
+    //    if (params != nil && !params!.isEmpty)
+    //    {
+    //      url = NSURL(string: "\(baseApi)\(convo)?\(params!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)")
+    //    } else {
+    //      url = NSURL(string: "\(baseApi)\(convo)")
+    //    }
+    //    session.dataTaskWithURL(url!, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+    //
+    //      guard let realResponse = response as? NSHTTPURLResponse where
+    //        realResponse.statusCode == 200 else {
+    //          print(response)
+    //          print("Not a 200 response")
+    //
+    //          dispatch_async(dispatch_get_main_queue(), {
+    //            HUD.flash(.Error, delay: 0.5)
+    //          })
+    //          return
+    //      }
+    //
+    //      // Read the JSON
+    //      do {
+    //        if let result = NSString(data:data!, encoding: NSUTF8StringEncoding) {
+    //          // print(result)
+    //          // Parse the JSON to get the data
+    //          let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! [String:AnyObject]
+    //          return completionHandler(json, nil)
+    //        }
+    //      } catch {
+    //        error
+    //        //        print("Error: Failed to get conversation ")
+    //      }
+    //    }).resume()
   }
+  
+  //  static func classify( completionHandler: (([String:AnyObject]!, NSError!) -> Void)!) -> Void
+  static func classify( handler: ((reply: String!) -> Void)!) -> Void
+  {
+    Alamofire.request(.GET, "\(API.baseApi)classify")
+      .responseJSON { response in
+        if let JSON = response.result.value {
+          //          print(JSON["reply"])
+          return handler(reply: JSON["reply"] as! String)
+        }
+    }
+    //    let url = NSURL(string: "\(API.baseApi)classify")
+    //    session.dataTaskWithURL(url!, completionHandler: { ( data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+    //
+    //      guard let realResponse = response as? NSHTTPURLResponse where
+    //        realResponse.statusCode == 200 else {
+    //          print(response)
+    //          print("Not a 200 response")
+    //
+    //          dispatch_async(dispatch_get_main_queue(), {
+    //            HUD.flash(.Error, delay: 0.5)
+    //          })
+    //          return
+    //      }
+    //
+    //      // Read the JSON
+    //      do {
+    //        if let result = NSString(data:data!, encoding: NSUTF8StringEncoding) {
+    //          print(result)
+    //
+    //          // Parse the JSON to get the data
+    //          let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! [String:AnyObject]
+    //          return completionHandler(json, nil)
+    //        }
+    //      } catch {
+    //        error
+    //        //        print("Error: Failed to get conversation ")
+    //      }
+    //    }).resume()
+  }
+  
   
   // Setup the session to make REST POST call
   //  func postConversation(endpoint:String, input:String) {

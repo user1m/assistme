@@ -43,23 +43,23 @@ class InterfaceController: WKInterfaceController {
   
   override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
     if (segueIdentifier == "chat") {
-      let index = API.botList.startIndex.advancedBy(rowIndex)
-      return API.botList.keys[index]
+      let index = Data.botList.startIndex.advancedBy(rowIndex)
+      return Data.botList.keys[index]
     }
     return nil
   }
   
   
   func setupTable() {
-    chatTable.setNumberOfRows(API.botList.count, withRowType: "listRow")
+    chatTable.setNumberOfRows(Data.botList.count, withRowType: "listRow")
     
     for rowNumber in 0..<self.chatTable.numberOfRows{
       
       //returns generic obj then cast as RowController
       let currentRow = self.chatTable.rowControllerAtIndex(rowNumber) as! ListRow
-      let index = API.botList.startIndex.advancedBy(rowNumber)
-      currentRow.chatBotLbl.setText(API.botList.keys[index])
-      currentRow.chatBotIcon.setImageNamed("\(API.botList.values[index][1])")
+      let index = Data.botList.startIndex.advancedBy(rowNumber)
+      currentRow.chatBotLbl.setText(Data.botList.keys[index])
+      currentRow.chatBotIcon.setImageNamed("\(Data.botList.values[index][1])")
     }
   }
   

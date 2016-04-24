@@ -11,7 +11,8 @@
 		DC028D481CB0632C00B1CF1A /* ChatInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC028D471CB0632C00B1CF1A /* ChatInterfaceController.swift */; };
 		DC917AC61CBFD6F6007FD04A /* ChatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC917AC51CBFD6F6007FD04A /* ChatRow.swift */; };
 		DC917ACA1CBFD75C007FD04A /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC917AC91CBFD75C007FD04A /* ListRow.swift */; };
-		DC917ACB1CBFD8C8007FD04A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CFD1CA901C40053FDCC /* API.swift */; };
+		DC917ACD1CC09951007FD04A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC917ACC1CC09951007FD04A /* Data.swift */; };
+		DC917ACE1CC09951007FD04A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC917ACC1CC09951007FD04A /* Data.swift */; };
 		DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */; };
 		DCFA1CC11CA9002B0053FDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CBF1CA9002B0053FDCC /* Main.storyboard */; };
 		DCFA1CC31CA9002B0053FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCFA1CC21CA9002B0053FDCC /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		DC028D471CB0632C00B1CF1A /* ChatInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInterfaceController.swift; sourceTree = "<group>"; };
 		DC917AC51CBFD6F6007FD04A /* ChatRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRow.swift; sourceTree = "<group>"; };
 		DC917AC91CBFD75C007FD04A /* ListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
+		DC917ACC1CC09951007FD04A /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		DCFA1CB81CA9002B0053FDCC /* assistme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assistme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA1CBB1CA9002B0053FDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFA1CC01CA9002B0053FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				DCFA1CFD1CA901C40053FDCC /* API.swift */,
 				DCFD8EA91CABCBAD0085834E /* Bridging-Header.h */,
+				DC917ACC1CC09951007FD04A /* Data.swift */,
 			);
 			name = Shared;
 			path = assistme;
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCFA1CFE1CA901C40053FDCC /* API.swift in Sources */,
+				DC917ACD1CC09951007FD04A /* Data.swift in Sources */,
 				DCFA1D021CA9022D0053FDCC /* ChatViewController.swift in Sources */,
 				DCFD8EA81CAB91690085834E /* DialogTableViewCell.swift in Sources */,
 				DCFA1CBC1CA9002B0053FDCC /* AppDelegate.swift in Sources */,
@@ -423,13 +427,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC917AC61CBFD6F6007FD04A /* ChatRow.swift in Sources */,
+				DC917ACE1CC09951007FD04A /* Data.swift in Sources */,
 				DCFA1CE51CA9002B0053FDCC /* NotificationController.swift in Sources */,
 				DCFA1CE31CA9002B0053FDCC /* ExtensionDelegate.swift in Sources */,
 				DCFA1CE91CA9002B0053FDCC /* ComplicationController.swift in Sources */,
 				DCFA1CE11CA9002B0053FDCC /* InterfaceController.swift in Sources */,
 				DC028D481CB0632C00B1CF1A /* ChatInterfaceController.swift in Sources */,
 				DCFA1CE71CA9002B0053FDCC /* GlanceController.swift in Sources */,
-				DC917ACB1CBFD8C8007FD04A /* API.swift in Sources */,
 				DC917ACA1CBFD75C007FD04A /* ListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
